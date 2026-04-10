@@ -256,7 +256,7 @@ function createAddButtons(siblings, depth) {
     // Trouver la ligne du nouveau snippet et démarrer l'édition inline du nom
     const rows = document.querySelectorAll('.snippet-row .item-name');
     const nameEl = [...rows].find(el => el.textContent === '');
-    if (nameEl) startEditNameThenValue(nameEl, node);
+    if (nameEl) startEditNameThenValue(nameEl, node, siblings);
   });
 
   div.appendChild(addFolder);
@@ -265,14 +265,18 @@ function createAddButtons(siblings, depth) {
 }
 
 // Édition en chaîne : nom → valeur pour les nouveaux snippets
-function startEditNameThenValue(el, node) {
+function startEditNameThenValue(el, node, siblings) {
   const input = document.createElement('input');
   input.type = 'text';
   input.value = node.name;
   input.className = 'inline-input';
   input.placeholder = 'Name…';
 
+  let committed = false;
+
   const commitName = () => {
+    if (committed) return;
+    committed = true;
     const v = input.value.trim();
     if (v) {
       node.name = v;
@@ -283,15 +287,17 @@ function startEditNameThenValue(el, node) {
       const valueEls = document.querySelectorAll('.snippet-row .snippet-fields');
       for (const fields of valueEls) {
         const nameSpan = fields.querySelector('.item-name');
-        if (nameSpan?.textContent === v && node.value === '') {
-          const valueWrap = fields.querySelector('.item-value-wrap') || fields.lastElementChild;
+        if (nameSpan?.textContent === v) {
+          const valueWrap = fields.querySelector('.item-value-wrap');
           if (valueWrap) { startEditValue(valueWrap, node); break; }
         }
       }
     } else {
       // Nom vide → supprimer le node
-      const idx = siblings.indexOf(node);
-      if (idx !== -1) siblings.splice(idx, 1);
+      if (siblings) {
+        const idx = siblings.indexOf(node);
+        if (idx !== -1) siblings.splice(idx, 1);
+      }
       saveTree(); renderWithState();
     }
   };
@@ -299,8 +305,11 @@ function startEditNameThenValue(el, node) {
   input.addEventListener('keydown', e => {
     if (e.key === 'Enter') { e.preventDefault(); commitName(); }
     if (e.key === 'Escape') {
-      const idx = siblings.indexOf(node);
-      if (idx !== -1) siblings.splice(idx, 1);
+      committed = true;
+      if (siblings) {
+        const idx = siblings.indexOf(node);
+        if (idx !== -1) siblings.splice(idx, 1);
+      }
       saveTree(); renderWithState();
     }
   });
@@ -318,15 +327,19 @@ function startEditName(el, node) {
   input.value = node.name;
   input.className = 'inline-input';
 
+  let committed = false;
+
   const commit = () => {
+    if (committed) return;
+    committed = true;
     const v = input.value.trim();
     if (v) { node.name = v; saveTree(); }
-    render();
+    renderWithState();
   };
 
   input.addEventListener('keydown', e => {
     if (e.key === 'Enter') { e.preventDefault(); commit(); }
-    if (e.key === 'Escape') render();
+    if (e.key === 'Escape') { committed = true; renderWithState(); }
   });
   input.addEventListener('blur', commit);
 
@@ -347,11 +360,14 @@ function startEditValue(el, node) {
     saveTree(); renderWithState();
   };
 
+  let committed = false;
+  const commitOnce = () => { if (!committed) { committed = true; commit(); } };
+
   ta.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { e.preventDefault(); render(); }
-    if (e.key === 'Enter' && e.ctrlKey) { e.preventDefault(); commit(); }
+    if (e.key === 'Escape') { committed = true; e.preventDefault(); renderWithState(); }
+    if (e.key === 'Enter' && e.ctrlKey) { e.preventDefault(); commitOnce(); }
   });
-  ta.addEventListener('blur', commit);
+  ta.addEventListener('blur', commitOnce);
 
   el.replaceWith(ta);
   ta.focus();
