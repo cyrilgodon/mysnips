@@ -151,16 +151,16 @@ function renderItem(node, siblings, index, depth, openFolders) {
 
     const valueWrap = document.createElement('span');
     valueWrap.className = 'item-value item-value-wrap';
-    valueWrap.style.display = 'flex';
-    valueWrap.style.alignItems = 'center';
-    valueWrap.title = 'Double-clic pour éditer la valeur\n\n' + (node.value || '');
-    valueWrap.addEventListener('dblclick', () => startEditValue(valueWrap, node));
+    valueWrap.style.cssText = 'display:flex;align-items:center;flex:1;min-width:60px;cursor:text;';
+    valueWrap.title = node.value || '';
+    valueWrap.addEventListener('click', () => startEditValue(valueWrap, node));
 
     const val = node.value || '';
     if (isHexColor(val)) valueWrap.appendChild(colorSwatch(val.trim()));
 
     const valueText = document.createElement('span');
-    valueText.textContent = truncate(val, 80);
+    valueText.textContent = val ? truncate(val, 80) : '';
+    if (!val) valueText.style.cssText = 'color:#bbb;font-style:italic;';
     valueWrap.appendChild(valueText);
 
     fields.appendChild(name);
