@@ -60,9 +60,9 @@ function getPosition() {
     const spaceBelow = window.innerHeight - r.bottom;
     const spaceAbove = r.top;
 
-    // Préférence : en dessous. On monte au-dessus seulement si vraiment trop juste en bas ET plus de place au-dessus.
+    // Préférence : en dessous si la place suffit, sinon au-dessus.
     let top;
-    if (spaceBelow >= 180 || spaceBelow >= spaceAbove) {
+    if (spaceBelow >= panelH || spaceBelow >= spaceAbove) {
       // En dessous
       top = r.bottom + window.scrollY + 4;
     } else {
