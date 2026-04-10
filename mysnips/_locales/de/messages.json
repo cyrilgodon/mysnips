@@ -51,7 +51,7 @@
     "message": "JSON direkt bearbeiten. Ctrl+S oder den Anwenden-Button zum Speichern. Syntaxfehler werden angezeigt, bevor etwas überschrieben wird."
   },
   "visualHint": {
-    "message": "Doppelklick auf einen Namen oder Wert zum Bearbeiten. Enter zum Bestätigen, Escape zum Abbrechen. Für lange Werte: Ctrl+Enter zum Bestätigen."
+    "message": "Doppelklick auf einen Namen oder Wert zum Bearbeiten. Enter zum Bestätigen, Shift+Enter für eine neue Zeile, Escape zum Abbrechen."
   },
   "shortcutLabel": {
     "message": "Tastenkürzel:"

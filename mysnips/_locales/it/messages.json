@@ -51,7 +51,7 @@
     "message": "Modifica il JSON direttamente. Ctrl+S o il pulsante Applica per salvare. Gli errori di sintassi vengono segnalati prima di sovrascrivere."
   },
   "visualHint": {
-    "message": "Doppio clic su un nome o valore per modificare. Invio per confermare, Escape per annullare. Per valori lunghi: Ctrl+Invio per confermare."
+    "message": "Doppio clic su un nome o valore per modificare. Invio per confermare, Shift+Invio per una nuova riga, Escape per annullare."
   },
   "shortcutLabel": {
     "message": "Scorciatoia:"

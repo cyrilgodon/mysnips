@@ -16,7 +16,7 @@
   "jsonApply": { "message": "✓ Uporabi" },
   "jsonReset": { "message": "↺ Zavrzi spremembe" },
   "jsonHint": { "message": "Urejajte JSON neposredno. Ctrl+S ali gumb Uporabi za shranjevanje. Sintaksne napake so prikazane pred prepisovanjem." },
-  "visualHint": { "message": "Dvojni klik na ime ali vrednost za urejanje. Enter za potrditev, Escape za preklic. Za dolge vrednosti: Ctrl+Enter za potrditev." },
+  "visualHint": { "message": "Dvojni klik na ime ali vrednost za urejanje. Enter za potrditev, Shift+Enter za novo vrstico, Escape za preklic." },
   "shortcutLabel": { "message": "Bližnjica na tipkovnici:" },
   "shortcutNone": { "message": "Bližnjica ni nastavljena" },
   "shortcutConfigure": { "message": "Nastavi" },

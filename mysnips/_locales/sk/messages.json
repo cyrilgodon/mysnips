@@ -16,7 +16,7 @@
   "jsonApply": { "message": "✓ Použiť" },
   "jsonReset": { "message": "↺ Zahodiť zmeny" },
   "jsonHint": { "message": "Upravte JSON priamo. Ctrl+S alebo tlačidlo Použiť na uloženie. Chyby syntaxe sú zobrazené pred prepísaním." },
-  "visualHint": { "message": "Dvakrát kliknite na názov alebo hodnotu pre úpravu. Enter pre potvrdenie, Escape pre zrušenie. Pre dlhé hodnoty: Ctrl+Enter pre potvrdenie." },
+  "visualHint": { "message": "Dvakrát kliknite na názov alebo hodnotu pre úpravu. Enter pre potvrdenie, Shift+Enter pre nový riadok, Escape pre zrušenie." },
   "shortcutLabel": { "message": "Klávesová skratka:" },
   "shortcutNone": { "message": "Žiadna skratka nie je nakonfigurovaná" },
   "shortcutConfigure": { "message": "Konfigurovať" },

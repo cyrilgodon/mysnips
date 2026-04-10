@@ -16,7 +16,7 @@
   "jsonApply": { "message": "✓ Applika" },
   "jsonReset": { "message": "↺ Warrab il-bidliet" },
   "jsonHint": { "message": "Editja l-JSON direttament. Ctrl+S jew il-buttuna Applika biex issalva. L-iżbalji tas-sintassi jintwerew qabel ma jiġi sovrascritto xejn." },
-  "visualHint": { "message": "Klikja darbtejn fuq isem jew valur biex teditja. Enter biex tikkonferma, Escape biex tħassar. Għal valuri twal: Ctrl+Enter biex tikkonferma." },
+  "visualHint": { "message": "Klikja darbtejn fuq isem jew valur biex teditja. Enter biex tikkonferma, Shift+Enter għal linja ġdida, Escape biex tħassar." },
   "shortcutLabel": { "message": "Shortcut tat-tastiera:" },
   "shortcutNone": { "message": "L-ebda shortcut ikonfigurat" },
   "shortcutConfigure": { "message": "Ikkonfigura" },

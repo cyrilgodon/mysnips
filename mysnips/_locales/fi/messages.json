@@ -16,7 +16,7 @@
   "jsonApply": { "message": "✓ Käytä" },
   "jsonReset": { "message": "↺ Hylkää muutokset" },
   "jsonHint": { "message": "Muokkaa JSON:ia suoraan. Ctrl+S tai Käytä-painike tallentaaksesi. Syntaksivirheet näytetään ennen kuin mitään ylikirjoitetaan." },
-  "visualHint": { "message": "Kaksoisnapsauta nimeä tai arvoa muokataksesi. Enter vahvistaa, Escape peruuttaa. Pitkille arvoille: Ctrl+Enter vahvistaa." },
+  "visualHint": { "message": "Kaksoisnapsauta nimeä tai arvoa muokataksesi. Enter vahvistaa, Shift+Enter lisää uuden rivin, Escape peruuttaa." },
   "shortcutLabel": { "message": "Pikanäppäin:" },
   "shortcutNone": { "message": "Ei määritettyä pikanäppäintä" },
   "shortcutConfigure": { "message": "Määritä" },

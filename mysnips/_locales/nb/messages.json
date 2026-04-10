@@ -16,7 +16,7 @@
   "jsonApply": { "message": "✓ Bruk" },
   "jsonReset": { "message": "↺ Forkast endringer" },
   "jsonHint": { "message": "Rediger JSON direkte. Ctrl+S eller Bruk-knappen for å lagre. Syntaksfeil vises før noe overskrives." },
-  "visualHint": { "message": "Dobbeltklikk på et navn eller en verdi for å redigere. Enter for å bekrefte, Escape for å avbryte. For lange verdier: Ctrl+Enter for å bekrefte." },
+  "visualHint": { "message": "Dobbeltklikk på et navn eller en verdi for å redigere. Enter for å bekrefte, Shift+Enter for ny linje, Escape for å avbryte." },
   "shortcutLabel": { "message": "Tastatursnarveier:" },
   "shortcutNone": { "message": "Ingen snarvei konfigurert" },
   "shortcutConfigure": { "message": "Konfigurer" },

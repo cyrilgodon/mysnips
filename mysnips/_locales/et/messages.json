@@ -16,7 +16,7 @@
   "jsonApply": { "message": "✓ Rakenda" },
   "jsonReset": { "message": "↺ Tühista muudatused" },
   "jsonHint": { "message": "Muuda JSON-i otse. Ctrl+S või nupp Rakenda salvestamiseks. Süntaksivead kuvatakse enne ülekirjutamist." },
-  "visualHint": { "message": "Topeltklõps nime või väärtuse muutmiseks. Enter kinnitamiseks, Escape tühistamiseks. Pikkade väärtuste puhul: Ctrl+Enter kinnitamiseks." },
+  "visualHint": { "message": "Topeltklõps nime või väärtuse muutmiseks. Enter kinnitamiseks, Shift+Enter uue rea lisamiseks, Escape tühistamiseks." },
   "shortcutLabel": { "message": "Klaviatuurikombinatsioon:" },
   "shortcutNone": { "message": "Kiirklahv on seadistamata" },
   "shortcutConfigure": { "message": "Seadista" },

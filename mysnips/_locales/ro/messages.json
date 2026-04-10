@@ -16,7 +16,7 @@
   "jsonApply": { "message": "✓ Aplică" },
   "jsonReset": { "message": "↺ Renunță la modificări" },
   "jsonHint": { "message": "Editați JSON direct. Ctrl+S sau butonul Aplică pentru a salva. Erorile de sintaxă sunt afișate înainte de a suprascrie ceva." },
-  "visualHint": { "message": "Faceți dublu clic pe un nume sau valoare pentru a edita. Enter pentru confirmare, Escape pentru anulare. Pentru valori lungi: Ctrl+Enter pentru confirmare." },
+  "visualHint": { "message": "Faceți dublu clic pe un nume sau valoare pentru a edita. Enter pentru confirmare, Shift+Enter pentru o linie nouă, Escape pentru anulare." },
   "shortcutLabel": { "message": "Scurtătură tastatură:" },
   "shortcutNone": { "message": "Nicio scurtătură configurată" },
   "shortcutConfigure": { "message": "Configurează" },

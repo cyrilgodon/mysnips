@@ -365,7 +365,8 @@ function startEditValue(el, node) {
 
   ta.addEventListener('keydown', e => {
     if (e.key === 'Escape') { committed = true; e.preventDefault(); renderWithState(); }
-    if (e.key === 'Enter' && e.ctrlKey) { e.preventDefault(); commitOnce(); }
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); commitOnce(); }
+    // Shift+Entrée → saut de ligne (comportement natif, pas besoin de handler)
   });
   ta.addEventListener('blur', commitOnce);
 

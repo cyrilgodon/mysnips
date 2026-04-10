@@ -51,7 +51,7 @@
     "message": "Édite le JSON directement. Ctrl+S ou le bouton \"Appliquer\" pour sauvegarder. Les erreurs de syntaxe sont signalées avant d'écraser quoi que ce soit."
   },
   "visualHint": {
-    "message": "Double-clic sur un nom ou une valeur pour l'éditer. Entrée pour valider, Échap pour annuler. Pour les valeurs longues : Ctrl+Entrée pour valider."
+    "message": "Double-clic sur un nom ou une valeur pour l'éditer. Entrée pour valider, Shift+Entrée pour une nouvelle ligne, Échap pour annuler."
   },
   "shortcutLabel": {
     "message": "Raccourci clavier :"

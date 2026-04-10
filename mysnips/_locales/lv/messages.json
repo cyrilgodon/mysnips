@@ -16,7 +16,7 @@
   "jsonApply": { "message": "✓ Lietot" },
   "jsonReset": { "message": "↺ Atcelt izmaiņas" },
   "jsonHint": { "message": "Rediģējiet JSON tieši. Ctrl+S vai poga Lietot saglabāšanai. Sintakses kļūdas tiek rādītas pirms pārrakstīšanas." },
-  "visualHint": { "message": "Veiciet dubultklikšķi uz nosaukuma vai vērtības rediģēšanai. Enter apstiprināšanai, Escape atcelšanai. Garām vērtībām: Ctrl+Enter apstiprināšanai." },
+  "visualHint": { "message": "Veiciet dubultklikšķi uz nosaukuma vai vērtības rediģēšanai. Enter apstiprināšanai, Shift+Enter jaunai rindai, Escape atcelšanai." },
   "shortcutLabel": { "message": "Tastatūras īsinājumtaustiņš:" },
   "shortcutNone": { "message": "Īsinājumtaustiņš nav konfigurēts" },
   "shortcutConfigure": { "message": "Konfigurēt" },

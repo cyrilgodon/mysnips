@@ -51,7 +51,7 @@
     "message": "Edit JSON directly. Ctrl+S or the Apply button to save. Syntax errors are shown before anything is overwritten."
   },
   "visualHint": {
-    "message": "Double-click a name or value to edit. Enter to confirm, Escape to cancel. For long values: Ctrl+Enter to confirm."
+    "message": "Double-click a name or value to edit. Enter to confirm, Shift+Enter for a new line, Escape to cancel."
   },
   "shortcutLabel": {
     "message": "Keyboard shortcut:"

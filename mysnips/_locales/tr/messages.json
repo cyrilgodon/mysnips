@@ -16,7 +16,7 @@
   "jsonApply": { "message": "✓ Uygula" },
   "jsonReset": { "message": "↺ Değişiklikleri at" },
   "jsonHint": { "message": "JSON'u doğrudan düzenleyin. Kaydetmek için Ctrl+S veya Uygula düğmesine basın. Söz dizimi hataları üzerine yazılmadan önce gösterilir." },
-  "visualHint": { "message": "Düzenlemek için bir ad veya değere çift tıklayın. Onaylamak için Enter, iptal etmek için Escape. Uzun değerler için: onaylamak için Ctrl+Enter." },
+  "visualHint": { "message": "Düzenlemek için bir ad veya değere çift tıklayın. Onaylamak için Enter, yeni satır için Shift+Enter, iptal etmek için Escape." },
   "shortcutLabel": { "message": "Klavye kısayolu:" },
   "shortcutNone": { "message": "Kısayol yapılandırılmamış" },
   "shortcutConfigure": { "message": "Yapılandır" },

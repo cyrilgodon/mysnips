@@ -16,7 +16,7 @@
   "jsonApply": { "message": "✓ Tillämpa" },
   "jsonReset": { "message": "↺ Ångra ändringar" },
   "jsonHint": { "message": "Redigera JSON direkt. Ctrl+S eller knappen Tillämpa för att spara. Syntaxfel visas innan något skrivs över." },
-  "visualHint": { "message": "Dubbelklicka på ett namn eller värde för att redigera. Enter för att bekräfta, Escape för att avbryta. För långa värden: Ctrl+Enter för att bekräfta." },
+  "visualHint": { "message": "Dubbelklicka på ett namn eller värde för att redigera. Enter för att bekräfta, Shift+Enter för ny rad, Escape för att avbryta." },
   "shortcutLabel": { "message": "Tangentbordsgenväg:" },
   "shortcutNone": { "message": "Ingen genväg konfigurerad" },
   "shortcutConfigure": { "message": "Konfigurera" },

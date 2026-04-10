@@ -16,7 +16,7 @@
   "jsonApply": { "message": "✓ Aplicar" },
   "jsonReset": { "message": "↺ Descartar alterações" },
   "jsonHint": { "message": "Editar JSON diretamente. Ctrl+S ou o botão Aplicar para guardar. Os erros de sintaxe são mostrados antes de qualquer substituição." },
-  "visualHint": { "message": "Faça duplo clique num nome ou valor para editar. Enter para confirmar, Escape para cancelar. Para valores longos: Ctrl+Enter para confirmar." },
+  "visualHint": { "message": "Faça duplo clique num nome ou valor para editar. Enter para confirmar, Shift+Enter para nova linha, Escape para cancelar." },
   "shortcutLabel": { "message": "Atalho de teclado:" },
   "shortcutNone": { "message": "Nenhum atalho configurado" },
   "shortcutConfigure": { "message": "Configurar" },

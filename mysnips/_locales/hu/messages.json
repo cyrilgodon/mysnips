@@ -16,7 +16,7 @@
   "jsonApply": { "message": "✓ Alkalmaz" },
   "jsonReset": { "message": "↺ Változtatások elvetése" },
   "jsonHint": { "message": "JSON szerkesztése közvetlenül. Ctrl+S vagy az Alkalmaz gomb a mentéshez. A szintaxishibák az felülírás előtt jelennek meg." },
-  "visualHint": { "message": "Kattintson duplán egy névre vagy értékre a szerkesztéshez. Enter a megerősítéshez, Escape a megszakításhoz. Hosszú értékekhez: Ctrl+Enter a megerősítéshez." },
+  "visualHint": { "message": "Kattintson duplán egy névre vagy értékre a szerkesztéshez. Enter a megerősítéshez, Shift+Enter új sorhoz, Escape a megszakításhoz." },
   "shortcutLabel": { "message": "Billentyűparancs:" },
   "shortcutNone": { "message": "Nincs beállított billentyűparancs" },
   "shortcutConfigure": { "message": "Beállítás" },

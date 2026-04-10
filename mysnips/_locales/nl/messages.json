@@ -16,7 +16,7 @@
   "jsonApply": { "message": "✓ Toepassen" },
   "jsonReset": { "message": "↺ Wijzigingen verwerpen" },
   "jsonHint": { "message": "Bewerk JSON direct. Ctrl+S of de knop Toepassen om op te slaan. Syntaxisfouten worden getoond voordat er iets wordt overschreven." },
-  "visualHint": { "message": "Dubbelklik op een naam of waarde om te bewerken. Enter om te bevestigen, Escape om te annuleren. Voor lange waarden: Ctrl+Enter om te bevestigen." },
+  "visualHint": { "message": "Dubbelklik op een naam of waarde om te bewerken. Enter om te bevestigen, Shift+Enter voor een nieuwe regel, Escape om te annuleren." },
   "shortcutLabel": { "message": "Sneltoets:" },
   "shortcutNone": { "message": "Geen sneltoets geconfigureerd" },
   "shortcutConfigure": { "message": "Configureren" },

@@ -16,7 +16,7 @@
   "jsonApply": { "message": "✓ Taikyti" },
   "jsonReset": { "message": "↺ Atšaukti pakeitimus" },
   "jsonHint": { "message": "Redaguokite JSON tiesiogiai. Ctrl+S arba mygtukas Taikyti išsaugojimui. Sintaksės klaidos rodomos prieš perrašant." },
-  "visualHint": { "message": "Dukart spustelėkite pavadinimą ar reikšmę redagavimui. Enter patvirtinimui, Escape atšaukimui. Ilgoms reikšmėms: Ctrl+Enter patvirtinimui." },
+  "visualHint": { "message": "Dukart spustelėkite pavadinimą ar reikšmę redagavimui. Enter patvirtinimui, Shift+Enter naujai eilutei, Escape atšaukimui." },
   "shortcutLabel": { "message": "Klaviatūros spartusis klavišas:" },
   "shortcutNone": { "message": "Spartusis klavišas nesukonfigūruotas" },
   "shortcutConfigure": { "message": "Konfigūruoti" },

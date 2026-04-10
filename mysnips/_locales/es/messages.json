@@ -51,7 +51,7 @@
     "message": "Edita el JSON directamente. Ctrl+S o el botón Aplicar para guardar. Los errores de sintaxis se muestran antes de sobrescribir nada."
   },
   "visualHint": {
-    "message": "Doble clic en un nombre o valor para editar. Enter para confirmar, Escape para cancelar. Para valores largos: Ctrl+Enter para confirmar."
+    "message": "Doble clic en un nombre o valor para editar. Enter para confirmar, Shift+Enter para nueva línea, Escape para cancelar."
   },
   "shortcutLabel": {
     "message": "Atajo de teclado:"

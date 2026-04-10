@@ -16,7 +16,7 @@
   "jsonApply": { "message": "✓ Primijeni" },
   "jsonReset": { "message": "↺ Odbaci promjene" },
   "jsonHint": { "message": "Uredite JSON izravno. Ctrl+S ili gumb Primijeni za spremanje. Sintaktičke greške prikazuju se prije prepisivanja." },
-  "visualHint": { "message": "Dvaput kliknite na naziv ili vrijednost za uređivanje. Enter za potvrdu, Escape za odustajanje. Za duge vrijednosti: Ctrl+Enter za potvrdu." },
+  "visualHint": { "message": "Dvaput kliknite na naziv ili vrijednost za uređivanje. Enter za potvrdu, Shift+Enter za novi redak, Escape za odustajanje." },
   "shortcutLabel": { "message": "Tipkovni prečac:" },
   "shortcutNone": { "message": "Nije konfiguriran prečac" },
   "shortcutConfigure": { "message": "Konfiguriraj" },

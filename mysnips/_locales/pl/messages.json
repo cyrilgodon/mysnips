@@ -16,7 +16,7 @@
   "jsonApply": { "message": "✓ Zastosuj" },
   "jsonReset": { "message": "↺ Odrzuć zmiany" },
   "jsonHint": { "message": "Edytuj JSON bezpośrednio. Ctrl+S lub przycisk Zastosuj, aby zapisać. Błędy składni są wyświetlane przed nadpisaniem." },
-  "visualHint": { "message": "Kliknij dwukrotnie nazwę lub wartość, aby edytować. Enter aby potwierdzić, Escape aby anulować. Dla długich wartości: Ctrl+Enter aby potwierdzić." },
+  "visualHint": { "message": "Kliknij dwukrotnie nazwę lub wartość, aby edytować. Enter aby potwierdzić, Shift+Enter dla nowej linii, Escape aby anulować." },
   "shortcutLabel": { "message": "Skrót klawiszowy:" },
   "shortcutNone": { "message": "Brak skonfigurowanego skrótu" },
   "shortcutConfigure": { "message": "Konfiguruj" },

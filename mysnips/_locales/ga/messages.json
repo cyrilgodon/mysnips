@@ -16,7 +16,7 @@
   "jsonApply": { "message": "✓ Cuir i bhfeidhm" },
   "jsonReset": { "message": "↺ Diúltaigh athruithe" },
   "jsonHint": { "message": "Cuir an JSON in eagar go díreach. Ctrl+S nó an cnaipe Cuir i bhfeidhm le sábháil. Taispeántar earráidí comhréire sula scríobhtar thar aon rud." },
-  "visualHint": { "message": "Cliceáil faoi dhó ar ainm nó luach le cur in eagar. Enter le deimhniú, Escape le cealú. Le luachanna fada: Ctrl+Enter le deimhniú." },
+  "visualHint": { "message": "Cliceáil faoi dhó ar ainm nó luach le cur in eagar. Enter le deimhniú, Shift+Enter le haghaidh líne nua, Escape le cealú." },
   "shortcutLabel": { "message": "Aicearra méarchláir:" },
   "shortcutNone": { "message": "Níl aon aicearra cumraithe" },
   "shortcutConfigure": { "message": "Cumraigh" },
