@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MySnips — Demo</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      padding: 40px 44px;
+      width: 560px;
+    }
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #1a1a1a;
+    }
+    p {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 28px;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 6px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ddd;
+      border-radius: 7px;
+      font-size: 14px;
+      font-family: inherit;
+      color: #1a1a1a;
+      background: #fafafa;
+      outline: none;
+      margin-bottom: 20px;
+    }
+    input:focus, textarea:focus {
+      border-color: #3286A7;
+      background: #fff;
+    }
+    textarea { height: 90px; resize: none; }
+    .hint {
+      font-size: 12px;
+      color: #aaa;
+      margin-top: -14px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Supplier registration</h1>
+    <p>Fill in your details — press <strong>Alt+S</strong> to insert a snippet instantly</p>
+
+    <label>Company name</label>
+    <input type="text" placeholder="Your company" id="company">
+
+    <label>VAT number</label>
+    <input type="text" placeholder="FR00000000000" id="vat">
+
+    <label>Message</label>
+    <textarea placeholder="Type your message here…" id="notes"></textarea>
+    <p class="hint">Click any field and press Alt+S to open MySnips.</p>
+  </div>
+</body>
+</html>

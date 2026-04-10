@@ -1,0 +1,14 @@
+# Données personnelles — ne jamais publier
+data-initial.json
+SCREENSHOT-mysnips.png
+
+# Screenshots de travail
+screenshot-store.png
+
+# Zip de build
+/mysnips.zip
+*.zip
+
+# OS
+.DS_Store
+Thumbs.db

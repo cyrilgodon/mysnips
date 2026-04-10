@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>MySnips</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>✂️ MySnips</h1>
+      <div class="header-actions">
+        <span id="status" class="status"></span>
+        <button id="btn-import" class="btn"></button>
+        <button id="btn-export" class="btn"></button>
+        <input type="file" id="file-input" accept=".json" style="display:none">
+      </div>
+    </header>
+
+    <div id="shortcut-bar" class="shortcut-bar">
+      <span class="shortcut-label"></span>
+      <span id="shortcut-value"></span>
+      <a href="chrome://extensions/shortcuts" target="_blank" id="shortcut-link" class="shortcut-link hidden"></a>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="visual"></button>
+      <button class="tab" data-tab="json"></button>
+    </div>
+
+    <div id="pane-visual">
+      <div class="hint"></div>
+      <div id="editor"></div>
+    </div>
+
+    <div id="pane-json" class="hidden">
+      <div class="hint"></div>
+      <div class="json-toolbar">
+        <button id="btn-json-apply" class="btn btn-primary"></button>
+        <button id="btn-json-reset" class="btn"></button>
+        <span id="json-error" class="json-error"></span>
+      </div>
+      <textarea id="json-editor" spellcheck="false" autocomplete="off"></textarea>
+    </div>
+  </div>
+  <script src="i18n.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

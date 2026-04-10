@@ -374,7 +374,7 @@ function initShortcut() {
     } else {
       const span = document.createElement('span');
       span.className = 'shortcut-none';
-      span.textContent = 'Aucun raccourci configuré';
+      span.textContent = t('shortcutNone');
       valueEl.appendChild(span);
       linkEl.textContent = t('shortcutConfigure');
       linkEl.classList.remove('hidden');
@@ -395,7 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('#pane-json .hint').textContent = t('jsonHint');
   document.querySelector('.tab[data-tab="visual"]').textContent = t('tabVisual');
   document.querySelector('.tab[data-tab="json"]').textContent = t('tabJson');
-  document.querySelector('.shortcut-label').textContent = t('shortcutLabel');
+  document.querySelector('#shortcut-bar .shortcut-label').textContent = t('shortcutLabel');
 
   loadTree();
   initTabs();
