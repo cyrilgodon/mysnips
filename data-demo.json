@@ -1,0 +1,46 @@
+{
+  "tree": [
+    {
+      "id": "folder-company",
+      "type": "folder",
+      "name": "Company",
+      "children": [
+        { "id": "company-vat", "type": "snippet", "name": "VAT number", "value": "FR12345678900" },
+        { "id": "company-reg", "type": "snippet", "name": "Company ID", "value": "12345678900015" },
+        { "id": "company-addr", "type": "snippet", "name": "Address", "value": "34 Boulevard des Italiens, Paris" }
+      ]
+    },
+    {
+      "id": "folder-booking",
+      "type": "folder",
+      "name": "Booking links",
+      "children": [
+        { "id": "booking-calendly", "type": "snippet", "name": "Calendly", "value": "https://calendly.com/alex-demo/30min" },
+        { "id": "booking-zoom", "type": "snippet", "name": "Zoom room", "value": "https://zoom.us/j/123456789" }
+      ]
+    },
+    {
+      "id": "folder-brand",
+      "type": "folder",
+      "name": "Brand colors",
+      "children": [
+        { "id": "brand-c1", "type": "snippet", "name": "Primary (mauve)", "value": "#a05e8e" },
+        { "id": "brand-c2", "type": "snippet", "name": "Secondary (blue)", "value": "#3286A7" },
+        { "id": "brand-c3", "type": "snippet", "name": "Body text", "value": "#44546A" }
+      ]
+    },
+    {
+      "id": "folder-emails",
+      "type": "folder",
+      "name": "Emails",
+      "children": [
+        {
+          "id": "mail-zoom",
+          "type": "snippet",
+          "name": "Zoom meeting proposal",
+          "value": "Hello,\nIf you prefer, I'd be happy to meet via Zoom.\nTalk soon,\nAlex"
+        }
+      ]
+    }
+  ]
+}

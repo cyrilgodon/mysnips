@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MySnips — Icon preview</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #e8edf2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      gap: 40px;
+      padding: 60px 40px;
+    }
+    h2 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #444;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .row {
+      display: flex;
+      align-items: flex-end;
+      gap: 40px;
+    }
+    .size-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .size-block span {
+      font-size: 12px;
+      color: #888;
+      font-weight: 600;
+    }
+    /* Checkerboard to test transparency */
+    .bg-white { background: #fff; padding: 12px; border-radius: 8px; }
+    .bg-dark  { background: #2d2d2d; padding: 12px; border-radius: 8px; }
+
+    .variants {
+      display: flex;
+      gap: 16px;
+    }
+
+    .export-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    button {
+      padding: 8px 18px;
+      border: none;
+      background: #3286A7;
+      color: white;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover { background: #257090; }
+    .note {
+      font-size: 12px;
+      color: #999;
+      text-align: center;
+      max-width: 400px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>MySnips — Icon preview</h2>
+
+  <div class="row" id="preview-row">
+    <!-- Filled by JS -->
+  </div>
+
+  <div class="export-row">
+    <button onclick="exportPNG(128)">⬇ icon128.png</button>
+    <button onclick="exportPNG(48)">⬇ icon48.png</button>
+    <button onclick="exportPNG(32)">⬇ icon32.png</button>
+    <button onclick="exportPNG(16)">⬇ icon16.png</button>
+  </div>
+
+  <p class="note">
+    Click a button to download the PNG at the right size.<br>
+    Put the files in <code>mysnips/mysnips/icons/</code>.
+  </p>
+
+  <script>
+    const SVG = `<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <rect width="128" height="128" rx="22" fill="#3286A7"/>
+  <path d="M 52,22 C 46,22 37,28 37,38 L 37,56 C 37,61 30,63 28,64 C 30,65 37,67 37,72 L 37,90 C 37,100 46,106 52,106"
+    fill="none" stroke="white" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 76,22 C 82,22 91,28 91,38 L 91,56 C 91,61 98,63 100,64 C 98,65 91,67 91,72 L 91,90 C 91,100 82,106 76,106"
+    fill="none" stroke="white" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+
+    const SIZES = [128, 48, 32, 16];
+
+    // Build preview
+    const row = document.getElementById('preview-row');
+    SIZES.forEach(size => {
+      const block = document.createElement('div');
+      block.className = 'size-block';
+
+      const variants = document.createElement('div');
+      variants.className = 'variants';
+
+      ['#f0f4f8', '#2d2d2d'].forEach(bg => {
+        const wrap = document.createElement('div');
+        wrap.style.cssText = `background:${bg};padding:10px;border-radius:8px;`;
+        const img = document.createElement('img');
+        img.width = size;
+        img.height = size;
+        img.style.display = 'block';
+        const blob = new Blob([SVG], {type: 'image/svg+xml'});
+        img.src = URL.createObjectURL(blob);
+        wrap.appendChild(img);
+        variants.appendChild(wrap);
+      });
+
+      const label = document.createElement('span');
+      label.textContent = `${size}×${size}`;
+
+      block.appendChild(variants);
+      block.appendChild(label);
+      row.appendChild(block);
+    });
+
+    // Export PNG
+    function exportPNG(size) {
+      const blob = new Blob([SVG], {type: 'image/svg+xml'});
+      const url  = URL.createObjectURL(blob);
+      const img  = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        canvas.width  = size;
+        canvas.height = size;
+        canvas.getContext('2d').drawImage(img, 0, 0, size, size);
+        URL.revokeObjectURL(url);
+        const a = document.createElement('a');
+        a.download = `icon${size}.png`;
+        a.href = canvas.toDataURL('image/png');
+        a.click();
+      };
+      img.src = url;
+    }
+  </script>
+</body>
+</html>

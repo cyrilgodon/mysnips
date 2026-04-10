@@ -9,10 +9,39 @@
       font-family: system-ui, -apple-system, sans-serif;
       background: #f0f4f8;
       display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 24px 40px 40px;
+    }
+    .page-title {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #3286A7;
+      color: #fff;
+      border-radius: 14px;
+      padding: 20px 32px;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.45;
+      margin-bottom: 36px;
+      box-shadow: 0 6px 24px rgba(50,134,167,0.35);
+      width: 560px;
+    }
+    .page-title .big-num {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      padding: 40px;
+      min-width: 52px;
+      height: 52px;
+      background: #fff;
+      color: #3286A7;
+      border-radius: 50%;
+      font-size: 28px;
+      font-weight: 800;
+      flex-shrink: 0;
     }
     .card {
       background: #fff;
@@ -21,24 +50,8 @@
       padding: 40px 44px;
       width: 560px;
     }
-    h1 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 6px;
-      color: #1a1a1a;
-    }
-    p {
-      font-size: 14px;
-      color: #888;
-      margin-bottom: 28px;
-    }
-    label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: #444;
-      margin-bottom: 6px;
-    }
+    h1 { font-size: 20px; font-weight: 700; margin-bottom: 28px; color: #1a1a1a; }
+    label { display: block; font-size: 13px; font-weight: 600; color: #444; margin-bottom: 6px; }
     input, textarea {
       width: 100%;
       padding: 10px 12px;
@@ -51,33 +64,142 @@
       outline: none;
       margin-bottom: 20px;
     }
-    input:focus, textarea:focus {
-      border-color: #3286A7;
-      background: #fff;
-    }
     textarea { height: 90px; resize: none; }
-    .hint {
+
+    /* Bulle sombre (cachée en mode bubbles) */
+    .tip {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      background: #2d2d2d;
+      color: #fff;
+      border-radius: 10px;
+      padding: 12px 18px;
+      font-size: 13px;
+      line-height: 1.5;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      max-width: 240px;
+    }
+    .tip kbd { background: #555; border-radius: 4px; padding: 1px 6px; font-family: inherit; font-size: 12px; font-weight: 600; }
+    .tip::after {
+      content: '';
+      position: absolute;
+      bottom: -8px; right: 24px;
+      border: 8px solid transparent;
+      border-bottom: none;
+      border-top-color: #2d2d2d;
+    }
+    .tip.hidden { display: none; }
+
+    /* Bulles annotées */
+    .callout {
+      display: none;
+      position: fixed;
+      background: #3286A7;
+      color: #fff;
+      border-radius: 10px;
+      padding: 10px 14px;
       font-size: 12px;
-      color: #aaa;
-      margin-top: -14px;
-      margin-bottom: 20px;
+      font-weight: 600;
+      line-height: 1.45;
+      box-shadow: 0 4px 16px rgba(50,134,167,0.35);
+      width: 195px;
+      z-index: 9999;
+      align-items: flex-start;
+    }
+    .callout.visible { display: flex; }
+    .callout .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 20px;
+      height: 20px;
+      background: #fff;
+      color: #3286A7;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+      margin-right: 8px;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+    /* Queue à droite — pointe vers la droite (vers le champ) */
+    .callout.arrow-right-tip::after {
+      content: '';
+      position: absolute;
+      top: 16px;
+      right: -8px;
+      border: 8px solid transparent;
+      border-right: none;
+      border-left-color: #3286A7;
     }
   </style>
 </head>
 <body>
+  <div class="page-title">
+    <span class="big-num">2</span>
+    <span>Instantly access your snippets in any text field or input</span>
+  </div>
+
   <div class="card">
     <h1>Supplier registration</h1>
-    <p>Fill in your details — press <strong>Alt+S</strong> to insert a snippet instantly</p>
 
     <label>Company name</label>
-    <input type="text" placeholder="Your company" id="company">
+    <input type="text" value="Acme Corporation" id="company">
 
     <label>VAT number</label>
-    <input type="text" placeholder="FR00000000000" id="vat">
+    <input type="text" value="" id="vat">
 
     <label>Message</label>
-    <textarea placeholder="Type your message here…" id="notes"></textarea>
-    <p class="hint">Click any field and press Alt+S to open MySnips.</p>
+    <textarea id="notes">Hello,
+If you prefer, I'd be happy to meet via Zoom for our appointment.
+Talk soon,
+Alex</textarea>
   </div>
+
+  <div class="tip" id="tip">
+    Press <kbd>Alt+S</kbd> in any field<br>to insert a snippet instantly
+  </div>
+
+  <!-- Bulle ① : raccourci clavier -->
+  <div class="callout arrow-right-tip" id="callout-1">
+    <span class="num">1</span>
+    <span>Press <kbd style="background:#1a6a8a;border-radius:3px;padding:1px 5px;font-size:11px;font-weight:700;">Alt+S</kbd> in any field to open your snippets</span>
+  </div>
+
+  <!-- Bulle ② : navigation dans le panel -->
+  <div class="callout arrow-right-tip" id="callout-2">
+    <span class="num">2</span>
+    <span>Use ↓↑ to browse, →← to expand/collapse, Enter to insert</span>
+  </div>
+
+  <script>
+    const bubbles = new URLSearchParams(location.search).has('bubbles');
+
+    if (bubbles) {
+      document.getElementById('tip').classList.add('hidden');
+      document.querySelectorAll('.callout').forEach(el => el.classList.add('visible'));
+
+      requestAnimationFrame(() => {
+        const vatField = document.getElementById('vat');
+        const textarea = document.getElementById('notes');
+        const c1 = document.getElementById('callout-1');
+        const c2 = document.getElementById('callout-2');
+
+        const vatRect = vatField.getBoundingClientRect();
+        const taRect  = textarea.getBoundingClientRect();
+
+        const cw = 195;
+
+        // Bulle ① : à gauche du champ VAT, pointe vers lui
+        c1.style.left = (vatRect.left - cw - 14) + 'px';
+        c1.style.top  = (vatRect.top + vatRect.height / 2 - 20) + 'px';
+
+        // Bulle ② : à gauche du panel/textarea, pointe vers lui
+        c2.style.left = (taRect.left - cw - 14) + 'px';
+        c2.style.top  = (taRect.top + taRect.height / 2 - 20) + 'px';
+      });
+    }
+  </script>
 </body>
 </html>

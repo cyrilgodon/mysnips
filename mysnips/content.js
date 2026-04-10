@@ -44,8 +44,11 @@ function isHexColor(str) {
 let panelHost = null;
 const elMap = new Map();
 
+let _panelKeydown = null;
+
 function closePanel() {
   if (panelHost) { panelHost.remove(); panelHost = null; }
+  if (_panelKeydown) { document.removeEventListener('keydown', _panelKeydown, true); _panelKeydown = null; }
 }
 
 function getPosition() {
@@ -460,18 +463,27 @@ function openPanel(tree) {
   panelHost.style.left = pos.left + 'px';
 
   renderTree(shadow, tree, '');
-  search.focus();
+  // Ne pas voler le focus — le curseur reste dans le champ texte original
 
-  // Recherche
-  search.addEventListener('input', () => {
-    renderTree(shadow, tree, search.value.trim().toLowerCase());
-  });
+  // Recherche : frappe de caractères filtre la liste sans quitter le champ
+  function handleKeydown(e) {
+    if (!panelHost) { document.removeEventListener('keydown', handleKeydown, true); return; }
 
-  // Clavier
-  shadow.addEventListener('keydown', e => {
+    // Caractère imprimable → ajouter au filtre de recherche
     if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
-      if (shadow.activeElement !== search) { search.focus(); return; }
+      search.value += e.key;
+      renderTree(shadow, tree, search.value.trim().toLowerCase());
+      e.preventDefault();
+      return;
     }
+    // Backspace → effacer dernier caractère du filtre
+    if (e.key === 'Backspace' && search.value) {
+      search.value = search.value.slice(0, -1);
+      renderTree(shadow, tree, search.value.trim().toLowerCase());
+      e.preventDefault();
+      return;
+    }
+
     switch (e.key) {
       case 'ArrowDown':  e.preventDefault(); navDown(shadow);  break;
       case 'ArrowUp':    e.preventDefault(); navUp(shadow);    break;
@@ -487,7 +499,10 @@ function openPanel(tree) {
         else closePanel();
         break;
     }
-  });
+  }
+
+  _panelKeydown = handleKeydown;
+  document.addEventListener('keydown', handleKeydown, true);
 
   // Clic en dehors → fermer
   setTimeout(() => {

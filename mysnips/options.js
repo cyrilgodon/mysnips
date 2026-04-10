@@ -50,20 +50,34 @@ function showStatus(msg) {
 
 // ── Render ────────────────────────────────────────────────────────────────────
 
-function render() {
-  const container = document.getElementById('editor');
-  container.innerHTML = '';
-  renderList(tree, container, 0);
+function getOpenFolders() {
+  const open = new Set();
+  document.querySelectorAll('.folder-body:not(.collapsed)').forEach(body => {
+    const id = body.dataset.folderId;
+    if (id) open.add(id);
+  });
+  return open;
 }
 
-function renderList(nodes, container, depth) {
+function render(openFolders) {
+  const container = document.getElementById('editor');
+  container.innerHTML = '';
+  renderList(tree, container, 0, openFolders);
+}
+
+function renderWithState() {
+  const open = getOpenFolders();
+  render(open);
+}
+
+function renderList(nodes, container, depth, openFolders) {
   for (let i = 0; i < nodes.length; i++) {
-    container.appendChild(renderItem(nodes[i], nodes, i, depth));
+    container.appendChild(renderItem(nodes[i], nodes, i, depth, openFolders));
   }
   container.appendChild(createAddButtons(nodes, depth));
 }
 
-function renderItem(node, siblings, index, depth) {
+function renderItem(node, siblings, index, depth, openFolders) {
   const wrap = document.createElement('div');
 
   if (node.type === 'folder') {
@@ -96,7 +110,15 @@ function renderItem(node, siblings, index, depth) {
 
     const body = document.createElement('div');
     body.className = 'folder-body collapsed';
-    renderList(node.children || [], body, depth + 1);
+    body.dataset.folderId = node.id;
+
+    // Restaurer l'état ouvert si nécessaire
+    if (openFolders?.has(node.id)) {
+      body.classList.remove('collapsed');
+      toggle.textContent = '▼';
+    }
+
+    renderList(node.children || [], body, depth + 1, openFolders);
 
     toggle.addEventListener('click', () => {
       const collapsed = body.classList.toggle('collapsed');
@@ -112,7 +134,7 @@ function renderItem(node, siblings, index, depth) {
 
     const icon = document.createElement('span');
     icon.className = 'icon';
-    icon.textContent = '📄';
+    icon.textContent = '≡';
 
     const fields = document.createElement('div');
     fields.className = 'snippet-fields';
@@ -128,7 +150,7 @@ function renderItem(node, siblings, index, depth) {
     sep.textContent = '→';
 
     const valueWrap = document.createElement('span');
-    valueWrap.className = 'item-value';
+    valueWrap.className = 'item-value item-value-wrap';
     valueWrap.style.display = 'flex';
     valueWrap.style.alignItems = 'center';
     valueWrap.title = 'Double-clic pour éditer la valeur\n\n' + (node.value || '');
@@ -165,14 +187,14 @@ function createActions(node, siblings, index) {
   div.appendChild(mkBtn('⬆', t('moveUp'), () => {
     if (index > 0) {
       [siblings[index - 1], siblings[index]] = [siblings[index], siblings[index - 1]];
-      saveTree(); render();
+      saveTree(); renderWithState();
     }
   }));
 
   div.appendChild(mkBtn('⬇', t('moveDown'), () => {
     if (index < siblings.length - 1) {
       [siblings[index], siblings[index + 1]] = [siblings[index + 1], siblings[index]];
-      saveTree(); render();
+      saveTree(); renderWithState();
     }
   }));
 
@@ -182,7 +204,7 @@ function createActions(node, siblings, index) {
       : t('deleteSnippet').replace('%s', node.name);
     if (confirm(label)) {
       siblings.splice(index, 1);
-      saveTree(); render();
+      saveTree(); renderWithState();
     }
   });
   del.classList.add('btn-del');
@@ -211,28 +233,81 @@ function createAddButtons(siblings, depth) {
   addFolder.className = 'btn-add';
   addFolder.textContent = t('addFolder');
   addFolder.addEventListener('click', () => {
-    const name = prompt(t('folderNamePrompt'));
-    if (name?.trim()) {
-      siblings.push({ id: uid(), type: 'folder', name: name.trim(), children: [] });
-      saveTree(); render();
-    }
+    const node = { id: uid(), type: 'folder', name: '', children: [] };
+    siblings.push(node);
+    saveTree();
+    const open = getOpenFolders();
+    render(open);
+    // Trouver la ligne du nouveau dossier et démarrer l'édition inline
+    const rows = document.querySelectorAll('.folder-row .item-name');
+    const nameEl = [...rows].find(el => el.textContent === '');
+    if (nameEl) startEditName(nameEl, node);
   });
 
   const addSnippet = document.createElement('button');
   addSnippet.className = 'btn-add';
   addSnippet.textContent = t('addSnippet');
   addSnippet.addEventListener('click', () => {
-    const name = prompt(t('snippetNamePrompt'));
-    if (!name?.trim()) return;
-    const value = prompt(t('snippetValuePrompt'));
-    if (value === null) return;
-    siblings.push({ id: uid(), type: 'snippet', name: name.trim(), value });
-    saveTree(); render();
+    const node = { id: uid(), type: 'snippet', name: '', value: '' };
+    siblings.push(node);
+    saveTree();
+    const open = getOpenFolders();
+    render(open);
+    // Trouver la ligne du nouveau snippet et démarrer l'édition inline du nom
+    const rows = document.querySelectorAll('.snippet-row .item-name');
+    const nameEl = [...rows].find(el => el.textContent === '');
+    if (nameEl) startEditNameThenValue(nameEl, node);
   });
 
   div.appendChild(addFolder);
   div.appendChild(addSnippet);
   return div;
+}
+
+// Édition en chaîne : nom → valeur pour les nouveaux snippets
+function startEditNameThenValue(el, node) {
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.value = node.name;
+  input.className = 'inline-input';
+  input.placeholder = 'Name…';
+
+  const commitName = () => {
+    const v = input.value.trim();
+    if (v) {
+      node.name = v;
+      saveTree();
+      // Passer à l'édition de la valeur
+      const open = getOpenFolders();
+      render(open);
+      const valueEls = document.querySelectorAll('.snippet-row .snippet-fields');
+      for (const fields of valueEls) {
+        const nameSpan = fields.querySelector('.item-name');
+        if (nameSpan?.textContent === v && node.value === '') {
+          const valueWrap = fields.querySelector('.item-value-wrap') || fields.lastElementChild;
+          if (valueWrap) { startEditValue(valueWrap, node); break; }
+        }
+      }
+    } else {
+      // Nom vide → supprimer le node
+      const idx = siblings.indexOf(node);
+      if (idx !== -1) siblings.splice(idx, 1);
+      saveTree(); renderWithState();
+    }
+  };
+
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') { e.preventDefault(); commitName(); }
+    if (e.key === 'Escape') {
+      const idx = siblings.indexOf(node);
+      if (idx !== -1) siblings.splice(idx, 1);
+      saveTree(); renderWithState();
+    }
+  });
+  input.addEventListener('blur', commitName);
+
+  el.replaceWith(input);
+  input.focus();
 }
 
 // ── Inline editing ────────────────────────────────────────────────────────────
@@ -269,7 +344,7 @@ function startEditValue(el, node) {
 
   const commit = () => {
     node.value = ta.value;
-    saveTree(); render();
+    saveTree(); renderWithState();
   };
 
   ta.addEventListener('keydown', e => {
@@ -303,7 +378,7 @@ function importJSON(file) {
       if (!Array.isArray(data.tree)) throw new Error('Champ "tree" manquant ou invalide.');
       const replace = confirm(t('importReplace'));
       tree = replace ? data.tree : [...tree, ...data.tree];
-      saveTree(); render();
+      saveTree(); renderWithState();
     } catch (err) {
       alert(t('importError') + err.message);
     }

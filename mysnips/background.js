@@ -6,7 +6,7 @@ function buildMenus(tree) {
   chrome.contextMenus.removeAll(() => {
     chrome.contextMenus.create({
       id: 'mysnips-root',
-      title: '✂️ MySnips',
+      title: 'MySnips',
       contexts: ['editable'],
     });
 

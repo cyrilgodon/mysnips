@@ -1,0 +1,107 @@
+{
+  "extName": {
+    "message": "MySnips"
+  },
+  "extDescription": {
+    "message": "Persönliche Snippets in einer Baumstruktur — private Nutzung"
+  },
+  "searchPlaceholder": {
+    "message": "Suchen…"
+  },
+  "openOptions": {
+    "message": "Snippets verwalten"
+  },
+  "noSnippets": {
+    "message": "Noch keine Snippets."
+  },
+  "openEditor": {
+    "message": "Editor öffnen →"
+  },
+  "noResults": {
+    "message": "Keine Ergebnisse."
+  },
+  "copied": {
+    "message": "Kopiert!"
+  },
+  "inserted": {
+    "message": "Eingefügt!"
+  },
+  "optionsTitle": {
+    "message": "MySnips — Editor"
+  },
+  "tabVisual": {
+    "message": "Baum"
+  },
+  "tabJson": {
+    "message": "Roh-JSON"
+  },
+  "importBtn": {
+    "message": "⬆ Datei importieren"
+  },
+  "exportBtn": {
+    "message": "⬇ Datei exportieren"
+  },
+  "jsonApply": {
+    "message": "✓ Anwenden"
+  },
+  "jsonReset": {
+    "message": "↺ Änderungen verwerfen"
+  },
+  "jsonHint": {
+    "message": "JSON direkt bearbeiten. Ctrl+S oder den Anwenden-Button zum Speichern. Syntaxfehler werden angezeigt, bevor etwas überschrieben wird."
+  },
+  "visualHint": {
+    "message": "Doppelklick auf einen Namen oder Wert zum Bearbeiten. Enter zum Bestätigen, Escape zum Abbrechen. Für lange Werte: Ctrl+Enter zum Bestätigen."
+  },
+  "shortcutLabel": {
+    "message": "Tastenkürzel:"
+  },
+  "shortcutNone": {
+    "message": "Kein Kürzel konfiguriert"
+  },
+  "shortcutConfigure": {
+    "message": "Konfigurieren"
+  },
+  "savedStatus": {
+    "message": "Gespeichert ✓"
+  },
+  "addFolder": {
+    "message": "＋ Ordner"
+  },
+  "addSnippet": {
+    "message": "＋ Snippet"
+  },
+  "folderNamePrompt": {
+    "message": "Ordnername:"
+  },
+  "snippetNamePrompt": {
+    "message": "Snippet-Name:"
+  },
+  "snippetValuePrompt": {
+    "message": "Wert:"
+  },
+  "deleteFolder": {
+    "message": "Ordner \"%s\" und seinen gesamten Inhalt löschen?"
+  },
+  "deleteSnippet": {
+    "message": "\"%s\" löschen?"
+  },
+  "importReplace": {
+    "message": "Wie importieren?\n\nOK     → Alles ersetzen\nAbbrechen → Zusammenführen (anhängen)"
+  },
+  "importError": {
+    "message": "Importfehler: "
+  },
+  "moveUp": {
+    "message": "Nach oben"
+  },
+  "moveDown": {
+    "message": "Nach unten"
+  },
+  "delete": {
+    "message": "Löschen"
+  },
+  "closePanel": {
+    "message": "Schließen"
+  }
+}

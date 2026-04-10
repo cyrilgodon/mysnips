@@ -1,0 +1,107 @@
+{
+  "extName": {
+    "message": "MySnips"
+  },
+  "extDescription": {
+    "message": "Snippets personales organizados en árbol — uso privado"
+  },
+  "searchPlaceholder": {
+    "message": "Buscar…"
+  },
+  "openOptions": {
+    "message": "Gestionar snippets"
+  },
+  "noSnippets": {
+    "message": "Sin snippets todavía."
+  },
+  "openEditor": {
+    "message": "Abrir editor →"
+  },
+  "noResults": {
+    "message": "Sin resultados."
+  },
+  "copied": {
+    "message": "¡Copiado!"
+  },
+  "inserted": {
+    "message": "¡Insertado!"
+  },
+  "optionsTitle": {
+    "message": "MySnips — Editor"
+  },
+  "tabVisual": {
+    "message": "Árbol"
+  },
+  "tabJson": {
+    "message": "JSON bruto"
+  },
+  "importBtn": {
+    "message": "⬆ Importar archivo"
+  },
+  "exportBtn": {
+    "message": "⬇ Exportar archivo"
+  },
+  "jsonApply": {
+    "message": "✓ Aplicar"
+  },
+  "jsonReset": {
+    "message": "↺ Descartar cambios"
+  },
+  "jsonHint": {
+    "message": "Edita el JSON directamente. Ctrl+S o el botón Aplicar para guardar. Los errores de sintaxis se muestran antes de sobrescribir nada."
+  },
+  "visualHint": {
+    "message": "Doble clic en un nombre o valor para editar. Enter para confirmar, Escape para cancelar. Para valores largos: Ctrl+Enter para confirmar."
+  },
+  "shortcutLabel": {
+    "message": "Atajo de teclado:"
+  },
+  "shortcutNone": {
+    "message": "Sin atajo configurado"
+  },
+  "shortcutConfigure": {
+    "message": "Configurar"
+  },
+  "savedStatus": {
+    "message": "Guardado ✓"
+  },
+  "addFolder": {
+    "message": "＋ Carpeta"
+  },
+  "addSnippet": {
+    "message": "＋ Snippet"
+  },
+  "folderNamePrompt": {
+    "message": "Nombre de la carpeta:"
+  },
+  "snippetNamePrompt": {
+    "message": "Nombre del snippet:"
+  },
+  "snippetValuePrompt": {
+    "message": "Valor:"
+  },
+  "deleteFolder": {
+    "message": "¿Eliminar la carpeta \"%s\" y todo su contenido?"
+  },
+  "deleteSnippet": {
+    "message": "¿Eliminar \"%s\"?"
+  },
+  "importReplace": {
+    "message": "¿Cómo importar?\n\nAceptar → Reemplazar todo\nCancelar → Fusionar (añadir)"
+  },
+  "importError": {
+    "message": "Error al importar: "
+  },
+  "moveUp": {
+    "message": "Subir"
+  },
+  "moveDown": {
+    "message": "Bajar"
+  },
+  "delete": {
+    "message": "Eliminar"
+  },
+  "closePanel": {
+    "message": "Cerrar"
+  }
+}

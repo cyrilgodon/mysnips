@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MySnips — Combined screenshot</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #e8edf2;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 48px 40px;
+      gap: 40px;
+    }
+
+    /* ====== COLONNES ====== */
+    .col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      flex: 1;
+      max-width: 600px;
+    }
+
+    /* ====== TITRE NUMÉROTÉ ====== */
+    .step-title {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: #3286A7;
+      color: #fff;
+      border-radius: 12px;
+      padding: 14px 20px;
+      width: 100%;
+      box-shadow: 0 4px 16px rgba(50,134,167,0.30);
+    }
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 52px;
+      height: 52px;
+      background: #fff;
+      color: #3286A7;
+      border-radius: 50%;
+      font-size: 28px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .step-text {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.45;
+      padding-top: 4px;
+    }
+
+    /* ====== PANNEAU OPTIONS ====== */
+    .options-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      width: 100%;
+      overflow: hidden;
+      font-size: 13px;
+      color: #1a1a1a;
+    }
+    .opt-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px 14px;
+      border-bottom: 2px solid #ddd;
+    }
+    .opt-header h2 { font-size: 17px; font-weight: 700; }
+    .opt-header-btns { display: flex; gap: 8px; }
+    .btn-sm {
+      padding: 5px 11px;
+      border: 1px solid #ccc;
+      background: #fff;
+      border-radius: 5px;
+      font-size: 12px;
+      color: #333;
+    }
+    .shortcut-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px;
+      background: #f0f6ff;
+      border-bottom: 1px solid #d0e4f7;
+      font-size: 12px;
+      color: #555;
+    }
+    .shortcut-key {
+      background: #fff;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      padding: 1px 7px;
+      font-family: monospace;
+      font-size: 12px;
+      font-weight: 600;
+      box-shadow: 0 1px 0 #bbb;
+    }
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #ddd;
+      padding: 0 16px;
+    }
+    .tab {
+      padding: 7px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #888;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+    }
+    .tab.active { color: #4a90e2; border-bottom-color: #4a90e2; }
+    .hint { font-size: 11px; color: #999; padding: 8px 16px 4px; }
+    .item-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 16px;
+      min-height: 32px;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 12px;
+    }
+    .folder-row { font-weight: 600; }
+    .toggle { font-size: 10px; color: #999; width: 12px; text-align: center; flex-shrink: 0; }
+    .item-name { flex-shrink: 0; padding: 1px 3px; }
+    .snippet-fields { display: flex; align-items: baseline; gap: 5px; flex: 1; min-width: 0; }
+    .sep { color: #ccc; }
+    .item-value {
+      color: #666; font-family: monospace; font-size: 11px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .color-swatch {
+      display: inline-block; width: 12px; height: 12px;
+      border-radius: 3px; border: 1px solid rgba(0,0,0,0.15);
+      flex-shrink: 0;
+    }
+    .indent { padding-left: 32px; }
+    .folder-body-collapsed { display: none; }
+    .add-row {
+      display: flex; gap: 6px; padding: 4px 16px;
+      border-bottom: 1px solid #f0f0f0; background: #fafafa;
+    }
+    .btn-add {
+      border: 1px dashed #ccc; border-radius: 4px;
+      padding: 2px 8px; font-size: 11px; color: #888; background: none;
+    }
+
+    /* ====== PANNEAU DÉMO ====== */
+    .demo-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      padding: 32px 36px;
+      width: 100%;
+    }
+    .demo-card h2 { font-size: 17px; font-weight: 700; margin-bottom: 22px; color: #1a1a1a; }
+    label { display: block; font-size: 12px; font-weight: 600; color: #444; margin-bottom: 5px; }
+    input, textarea {
+      width: 100%; padding: 9px 11px;
+      border: 1px solid #ddd; border-radius: 7px;
+      font-size: 13px; font-family: inherit; color: #1a1a1a;
+      background: #fafafa; outline: none; margin-bottom: 16px;
+    }
+    input:nth-of-type(2) { border-color: #3286A7; background: #fff; }
+    textarea { height: 80px; resize: none; }
+
+    /* Panel MySnips flottant simulé */
+    .snips-panel {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      background: #fff;
+      width: 100%;
+      overflow: hidden;
+      font-size: 12px;
+    }
+    .panel-search {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .panel-search input {
+      flex: 1; border: 1px solid #ddd; border-radius: 5px;
+      padding: 5px 9px; font-size: 12px; margin: 0;
+      background: #fafafa;
+    }
+    .panel-close { color: #999; font-size: 14px; cursor: pointer; }
+    .panel-row {
+      display: flex; align-items: center; gap: 6px;
+      padding: 5px 10px; min-height: 30px;
+      border-bottom: 1px solid #f5f5f5;
+    }
+    .panel-row.selected { background: #e8f4f8; }
+    .panel-row .toggle { font-size: 9px; color: #999; width: 10px; }
+    .panel-row .pname { flex-shrink: 0; }
+    .panel-row .pvalue { color: #888; font-family: monospace; font-size: 11px; margin-left: 4px; }
+  </style>
+</head>
+<body>
+
+  <!-- ① Configuration -->
+  <div class="col">
+    <div class="step-title">
+      <span class="step-num">1</span>
+      <span class="step-text">Configure your most-used snippets<br>directly in the extension</span>
+    </div>
+
+    <div class="options-card">
+      <div class="opt-header">
+        <h2>✂️ MySnips Configuration</h2>
+        <div class="opt-header-btns">
+          <button class="btn-sm">⬆ Import</button>
+          <button class="btn-sm">⬇ Export</button>
+        </div>
+      </div>
+      <div class="shortcut-bar">
+        <span style="color:#888">Keyboard shortcut:</span>
+        <span class="shortcut-key">Alt+S</span>
+        <span style="color:#4a90e2;font-size:12px;">· Change</span>
+      </div>
+      <div class="tabs">
+        <div class="tab active">Tree view</div>
+        <div class="tab">Raw JSON</div>
+      </div>
+      <div class="hint">Double-click a name or value to edit inline.</div>
+
+      <!-- Elevatio -->
+      <div class="item-row folder-row">
+        <span class="toggle">▼</span>
+        <span>📁</span>
+        <span class="item-name">Elevatio</span>
+      </div>
+      <div class="item-row indent">
+        <span class="toggle"></span>
+        <span>✂️</span>
+        <div class="snippet-fields">
+          <span class="item-name">VAT number</span>
+          <span class="sep">→</span>
+          <span class="item-value">FR12345678900</span>
+        </div>
+      </div>
+      <div class="item-row indent">
+        <span class="toggle"></span>
+        <span>✂️</span>
+        <div class="snippet-fields">
+          <span class="item-name">Company ID</span>
+          <span class="sep">→</span>
+          <span class="item-value">12345678900015</span>
+        </div>
+      </div>
+      <div class="item-row indent">
+        <span class="toggle"></span>
+        <span>✂️</span>
+        <div class="snippet-fields">
+          <span class="item-name">Address</span>
+          <span class="sep">→</span>
+          <span class="item-value">34 Boulevard des Italiens</span>
+        </div>
+      </div>
+      <div class="add-row indent"><button class="btn-add">＋ snippet</button><button class="btn-add">📁 folder</button></div>
+
+      <!-- Zeolitop -->
+      <div class="item-row folder-row">
+        <span class="toggle">▶</span>
+        <span>📁</span>
+        <span class="item-name">Zeolitop</span>
+      </div>
+
+      <!-- Brand colors -->
+      <div class="item-row folder-row">
+        <span class="toggle">▼</span>
+        <span>📁</span>
+        <span class="item-name">Brand colors</span>
+      </div>
+      <div class="item-row indent">
+        <span class="toggle"></span>
+        <span>✂️</span>
+        <div class="snippet-fields">
+          <span class="item-name">Primary (mauve)</span>
+          <span class="sep">→</span>
+          <span class="color-swatch" style="background:#a05e8e;"></span>
+          <span class="item-value">#a05e8e</span>
+        </div>
+      </div>
+      <div class="item-row indent">
+        <span class="toggle"></span>
+        <span>✂️</span>
+        <div class="snippet-fields">
+          <span class="item-name">Secondary (blue)</span>
+          <span class="sep">→</span>
+          <span class="color-swatch" style="background:#3286A7;"></span>
+          <span class="item-value">#3286A7</span>
+        </div>
+      </div>
+      <div class="item-row indent">
+        <span class="toggle"></span>
+        <span>✂️</span>
+        <div class="snippet-fields">
+          <span class="item-name">Body text</span>
+          <span class="sep">→</span>
+          <span class="color-swatch" style="background:#44546A;"></span>
+          <span class="item-value">#44546A</span>
+        </div>
+      </div>
+      <div class="add-row indent"><button class="btn-add">＋ snippet</button><button class="btn-add">📁 folder</button></div>
+
+      <!-- Emails -->
+      <div class="item-row folder-row">
+        <span class="toggle">▶</span>
+        <span>📁</span>
+        <span class="item-name">Emails</span>
+      </div>
+      <div class="add-row" style="padding-left:32px;"><button class="btn-add">＋ snippet</button><button class="btn-add">📁 folder</button></div>
+    </div>
+  </div>
+
+  <!-- ② Utilisation -->
+  <div class="col">
+    <div class="step-title">
+      <span class="step-num">2</span>
+      <span class="step-text">Access them instantly<br>in any text field — press <span style="background:rgba(255,255,255,0.25);border-radius:4px;padding:1px 7px;font-family:monospace;">Alt+S</span></span>
+    </div>
+
+    <div class="demo-card">
+      <h2>Supplier registration</h2>
+
+      <label>Company name</label>
+      <input type="text" value="Acme Corporation">
+
+      <label>VAT number</label>
+      <input type="text" value="FR12345678900">
+
+      <label>Message</label>
+      <textarea>Hello,
+If you prefer, I'd be happy to meet via Zoom.
+Talk soon, Alex</textarea>
+    </div>
+
+    <div class="snips-panel">
+      <div class="panel-search">
+        <input type="text" placeholder="Search...">
+        <span class="panel-close">✕</span>
+      </div>
+      <div class="panel-row">
+        <span class="toggle">▶</span>
+        <span>📁</span>
+        <span class="pname">Elevatio</span>
+      </div>
+      <div class="panel-row selected">
+        <span class="toggle">▶</span>
+        <span>📁</span>
+        <span class="pname" style="color:#3286A7;font-weight:600;">Zeolitop</span>
+      </div>
+      <div class="panel-row">
+        <span class="toggle" style="width:22px;"></span>
+        <span>✂️</span>
+        <span class="pname">VAT number</span>
+        <span class="pvalue">FR98765432100</span>
+      </div>
+      <div class="panel-row">
+        <span class="toggle" style="width:22px;"></span>
+        <span>✂️</span>
+        <span class="pname">Company ID</span>
+        <span class="pvalue">98765432100015</span>
+      </div>
+      <div class="panel-row">
+        <span class="toggle">▶</span>
+        <span>📁</span>
+        <span class="pname">Brand colors</span>
+      </div>
+      <div class="panel-row">
+        <span class="toggle">▶</span>
+        <span>📁</span>
+        <span class="pname">Emails</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+{
+  "extName": {
+    "message": "MySnips"
+  },
+  "extDescription": {
+    "message": "Snippet personali organizzati ad albero — uso privato"
+  },
+  "searchPlaceholder": {
+    "message": "Cerca…"
+  },
+  "openOptions": {
+    "message": "Gestisci snippet"
+  },
+  "noSnippets": {
+    "message": "Nessuno snippet ancora."
+  },
+  "openEditor": {
+    "message": "Apri editor →"
+  },
+  "noResults": {
+    "message": "Nessun risultato."
+  },
+  "copied": {
+    "message": "Copiato!"
+  },
+  "inserted": {
+    "message": "Inserito!"
+  },
+  "optionsTitle": {
+    "message": "MySnips — Editor"
+  },
+  "tabVisual": {
+    "message": "Albero"
+  },
+  "tabJson": {
+    "message": "JSON grezzo"
+  },
+  "importBtn": {
+    "message": "⬆ Importa file"
+  },
+  "exportBtn": {
+    "message": "⬇ Esporta file"
+  },
+  "jsonApply": {
+    "message": "✓ Applica"
+  },
+  "jsonReset": {
+    "message": "↺ Annulla modifiche"
+  },
+  "jsonHint": {
+    "message": "Modifica il JSON direttamente. Ctrl+S o il pulsante Applica per salvare. Gli errori di sintassi vengono segnalati prima di sovrascrivere."
+  },
+  "visualHint": {
+    "message": "Doppio clic su un nome o valore per modificare. Invio per confermare, Escape per annullare. Per valori lunghi: Ctrl+Invio per confermare."
+  },
+  "shortcutLabel": {
+    "message": "Scorciatoia:"
+  },
+  "shortcutNone": {
+    "message": "Nessuna scorciatoia configurata"
+  },
+  "shortcutConfigure": {
+    "message": "Configura"
+  },
+  "savedStatus": {
+    "message": "Salvato ✓"
+  },
+  "addFolder": {
+    "message": "＋ Cartella"
+  },
+  "addSnippet": {
+    "message": "＋ Snippet"
+  },
+  "folderNamePrompt": {
+    "message": "Nome della cartella:"
+  },
+  "snippetNamePrompt": {
+    "message": "Nome dello snippet:"
+  },
+  "snippetValuePrompt": {
+    "message": "Valore:"
+  },
+  "deleteFolder": {
+    "message": "Eliminare la cartella \"%s\" e tutto il suo contenuto?"
+  },
+  "deleteSnippet": {
+    "message": "Eliminare \"%s\"?"
+  },
+  "importReplace": {
+    "message": "Come importare?\n\nOK     → Sostituisci tutto\nAnnulla → Unisci (aggiungi)"
+  },
+  "importError": {
+    "message": "Errore di importazione: "
+  },
+  "moveUp": {
+    "message": "Sposta su"
+  },
+  "moveDown": {
+    "message": "Sposta giù"
+  },
+  "delete": {
+    "message": "Elimina"
+  },
+  "closePanel": {
+    "message": "Chiudi"
+  }
+}

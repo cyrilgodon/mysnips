@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MySnips — Options (screenshot)</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 13px;
+      background: #f4f4f4;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+    #app { max-width: 860px; margin: 0 auto; padding: 24px 20px; }
+    .page-title {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #3286A7;
+      color: #fff;
+      border-radius: 14px;
+      padding: 20px 32px;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.45;
+      margin-bottom: 28px;
+      box-shadow: 0 6px 24px rgba(50,134,167,0.35);
+    }
+    .page-title .big-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 52px;
+      height: 52px;
+      background: #fff;
+      color: #3286A7;
+      border-radius: 50%;
+      font-size: 28px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid #ddd;
+    }
+    h1 { font-size: 20px; font-weight: 700; color: #1a1a1a; }
+    .header-actions { display: flex; align-items: center; gap: 8px; }
+    .btn {
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      background: #fff;
+      border-radius: 5px;
+      font-size: 13px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .shortcut-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      background: #f0f6ff;
+      border: 1px solid #d0e4f7;
+      border-radius: 6px;
+      margin-bottom: 14px;
+      font-size: 12px;
+      color: #555;
+    }
+    .shortcut-label { color: #888; }
+    .shortcut-key {
+      display: inline-block;
+      background: #fff;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      padding: 1px 7px;
+      font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: #1a1a1a;
+      box-shadow: 0 1px 0 #bbb;
+    }
+    .shortcut-change { margin-left: 4px; color: #4a90e2; font-size: 12px; }
+
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #ddd;
+      margin-top: 14px;
+    }
+    .tab {
+      padding: 7px 20px;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #888;
+      cursor: pointer;
+    }
+    .tab.active { color: #4a90e2; border-bottom-color: #4a90e2; }
+
+    .hint { font-size: 11px; color: #999; margin: 10px 0 14px; line-height: 1.5; }
+
+    #editor {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .item-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 8px;
+      min-height: 36px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .item-row:last-child { border-bottom: none; }
+    .folder-row { font-weight: 600; }
+    .toggle { font-size: 10px; color: #999; width: 12px; flex-shrink: 0; text-align: center; }
+    .icon { font-size: 14px; flex-shrink: 0; }
+    .item-name { padding: 1px 4px; border-radius: 3px; flex-shrink: 0; }
+    .snippet-fields { display: flex; align-items: baseline; gap: 6px; flex: 1; min-width: 0; }
+    .sep { color: #ccc; flex-shrink: 0; }
+    .item-value {
+      flex: 1;
+      color: #666;
+      font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+      font-size: 11px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 1px 4px;
+      border-radius: 3px;
+    }
+    .item-actions { margin-left: auto; display: flex; gap: 2px; opacity: 0; flex-shrink: 0; }
+    .action-btn { background: none; border: none; padding: 3px 5px; border-radius: 3px; font-size: 13px; line-height: 1; color: #555; cursor: pointer; }
+    .folder-body.collapsed { display: none; }
+    .add-row {
+      display: flex; gap: 6px; padding: 5px 8px;
+      border-bottom: 1px solid #f0f0f0;
+      background: #fafafa;
+    }
+    .btn-add { border: 1px dashed #ccc; border-radius: 4px; padding: 3px 10px; font-size: 12px; color: #888; background: none; cursor: pointer; }
+    .indent-1 { padding-left: 28px; }
+    .color-swatch {
+      display: inline-block;
+      width: 13px; height: 13px;
+      border-radius: 3px;
+      border: 1px solid rgba(0,0,0,0.15);
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    /* ====== CALLOUTS ====== */
+    .callout {
+      display: none;
+      position: fixed;
+      background: #3286A7;
+      color: #fff;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.45;
+      box-shadow: 0 4px 16px rgba(50,134,167,0.35);
+      width: 195px;
+      z-index: 9999;
+      align-items: flex-start;
+    }
+    .callout.visible { display: flex; }
+    .callout .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 20px;
+      height: 20px;
+      background: #fff;
+      color: #3286A7;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+      margin-right: 8px;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+    /* Queue à gauche — pointe vers la gauche */
+    .callout.arrow-left::before {
+      content: '';
+      position: absolute;
+      top: 16px; left: -8px;
+      border: 8px solid transparent;
+      border-left: none;
+      border-right-color: #3286A7;
+    }
+    /* Queue en haut — pointe vers le haut */
+    .callout.arrow-up::before {
+      content: '';
+      position: absolute;
+      top: -8px; left: 24px;
+      border: 8px solid transparent;
+      border-top: none;
+      border-bottom-color: #3286A7;
+    }
+    /* Queue à droite — pointe vers la droite */
+    .callout.arrow-right::before {
+      content: '';
+      position: absolute;
+      top: 16px; right: -8px;
+      border: 8px solid transparent;
+      border-right: none;
+      border-left-color: #3286A7;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+
+  <div class="page-title">
+    <span class="big-num">1</span>
+    <span>Set up your most-used snippets — reuse them everywhere</span>
+  </div>
+
+  <header>
+    <h1>MySnips Configuration</h1>
+    <div class="header-actions" id="header-actions">
+      <button class="btn">⬆ Import</button>
+      <button class="btn">⬇ Export</button>
+    </div>
+  </header>
+
+  <div class="shortcut-bar">
+    <span class="shortcut-label">Keyboard shortcut:</span>
+    <span class="shortcut-key">Alt+S</span>
+    <span class="shortcut-change">· Change</span>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active">Tree view</button>
+    <button class="tab">Raw JSON</button>
+  </div>
+
+  <p class="hint">Double-click a name or value to edit inline. Press Enter to confirm, Escape to cancel.</p>
+
+  <div id="editor">
+
+    <!-- Company (expanded) -->
+    <div class="item-row folder-row">
+      <span class="toggle">▼</span>
+      <span class="icon">📁</span>
+      <span class="item-name">Company</span>
+      <div class="item-actions">
+        <button class="action-btn">＋</button>
+        <button class="action-btn">✎</button>
+        <button class="action-btn">✕</button>
+      </div>
+    </div>
+    <div class="folder-body">
+      <div class="item-row indent-1">
+        <span class="toggle"></span>
+        <span class="icon">≡</span>
+        <div class="snippet-fields">
+          <span class="item-name">VAT number</span>
+          <span class="sep">→</span>
+          <span class="item-value">FR12345678900</span>
+        </div>
+      </div>
+      <div class="item-row indent-1">
+        <span class="toggle"></span>
+        <span class="icon">≡</span>
+        <div class="snippet-fields">
+          <span class="item-name">Company ID</span>
+          <span class="sep">→</span>
+          <span class="item-value">12345678900015</span>
+        </div>
+      </div>
+      <div class="item-row indent-1">
+        <span class="toggle"></span>
+        <span class="icon">≡</span>
+        <div class="snippet-fields">
+          <span class="item-name">Address</span>
+          <span class="sep">→</span>
+          <span class="item-value">34 Boulevard des Italiens, Paris</span>
+        </div>
+      </div>
+      <div class="add-row indent-1">
+        <button class="btn-add">＋ snippet</button>
+        <button class="btn-add">📁 folder</button>
+      </div>
+    </div>
+
+    <!-- Booking links (expanded, with inline editing) -->
+    <div class="item-row folder-row">
+      <span class="toggle">▼</span>
+      <span class="icon">📁</span>
+      <span class="item-name">Booking links</span>
+    </div>
+    <div class="folder-body">
+      <div class="item-row indent-1">
+        <span class="toggle"></span>
+        <span class="icon">≡</span>
+        <div class="snippet-fields">
+          <span class="item-name">Calendly</span>
+          <span class="sep">→</span>
+          <span class="item-value">https://calendly.com/alex/30min</span>
+        </div>
+      </div>
+      <!-- Ligne en cours d'édition -->
+      <div class="item-row indent-1" id="editing-row" style="background:#f0f7ff;">
+        <span class="toggle"></span>
+        <span class="icon">≡</span>
+        <div class="snippet-fields" style="gap:8px;">
+          <input style="border:1px solid #4a90e2;border-radius:4px;padding:2px 6px;font-size:12px;font-family:inherit;outline:none;width:110px;background:#fff;" value="Zoom room" />
+          <span class="sep">→</span>
+          <div style="position:relative;flex:1;">
+            <input id="editing-input" style="border:1px solid #4a90e2;border-radius:4px;padding:2px 6px;font-size:12px;font-family:monospace;outline:none;width:100%;background:#fff;caret-color:#4a90e2;" value="https://zoom.us/j/123456789" />
+          </div>
+        </div>
+      </div>
+      <div class="add-row indent-1">
+        <button class="btn-add">＋ snippet</button>
+        <button class="btn-add">📁 folder</button>
+      </div>
+    </div>
+
+    <!-- Brand colors (expanded) -->
+    <div class="item-row folder-row" id="charte-row">
+      <span class="toggle">▼</span>
+      <span class="icon">📁</span>
+      <span class="item-name">Brand colors</span>
+    </div>
+    <div class="folder-body" id="charte-body">
+      <div class="item-row indent-1" id="swatch-row">
+        <span class="toggle"></span>
+        <span class="icon">≡</span>
+        <div class="snippet-fields">
+          <span class="item-name">Primary (mauve)</span>
+          <span class="sep">→</span>
+          <span class="color-swatch" style="background:#a05e8e;"></span>
+          <span class="item-value">#a05e8e</span>
+        </div>
+      </div>
+      <div class="item-row indent-1">
+        <span class="toggle"></span>
+        <span class="icon">≡</span>
+        <div class="snippet-fields">
+          <span class="item-name">Secondary (blue)</span>
+          <span class="sep">→</span>
+          <span class="color-swatch" style="background:#3286A7;"></span>
+          <span class="item-value">#3286A7</span>
+        </div>
+      </div>
+      <div class="item-row indent-1">
+        <span class="toggle"></span>
+        <span class="icon">≡</span>
+        <div class="snippet-fields">
+          <span class="item-name">Body text</span>
+          <span class="sep">→</span>
+          <span class="color-swatch" style="background:#44546A;"></span>
+          <span class="item-value">#44546A</span>
+        </div>
+      </div>
+      <div class="add-row indent-1">
+        <button class="btn-add">＋ snippet</button>
+        <button class="btn-add">📁 folder</button>
+      </div>
+    </div>
+
+    <!-- Emails (collapsed) -->
+    <div class="item-row folder-row">
+      <span class="toggle">▶</span>
+      <span class="icon">📁</span>
+      <span class="item-name">Emails</span>
+    </div>
+    <div class="folder-body collapsed"></div>
+
+    <!-- Root add row -->
+    <div class="add-row" style="padding-left:28px;">
+      <button class="btn-add">＋ snippet</button>
+      <button class="btn-add">📁 folder</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- Bulle ① : raccourci clavier -->
+<div class="callout arrow-left" id="callout-1">
+  <span class="num">1</span>
+  <span>Configure your shortcut key to trigger snippet selection</span>
+</div>
+
+<!-- Bulle ② : arborescence -->
+<div class="callout arrow-left" id="callout-2">
+  <span class="num">2</span>
+  <span>Organize snippets in unlimited nested folders</span>
+</div>
+
+<!-- Bulle ③ : édition inline -->
+<div class="callout arrow-left" id="callout-3">
+  <span class="num">3</span>
+  <span>Edit any snippet inline — just double-click</span>
+</div>
+
+<script>
+  const bubbles = new URLSearchParams(location.search).has('bubbles');
+
+  if (bubbles) {
+    document.querySelectorAll('.callout').forEach(el => el.classList.add('visible'));
+
+    requestAnimationFrame(() => {
+      const shortcutBar = document.querySelector('.shortcut-bar');
+      const editor      = document.getElementById('editor');
+      const editRow     = document.getElementById('editing-row');
+      const c1 = document.getElementById('callout-1');
+      const c2 = document.getElementById('callout-2');
+      const c3 = document.getElementById('callout-3');
+
+      const scRect   = shortcutBar.getBoundingClientRect();
+      const edRect   = editor.getBoundingClientRect();
+      const editRect = editRow.getBoundingClientRect();
+
+      // ① À droite de la shortcut bar
+      c1.style.right = '20px';
+      c1.style.top   = (scRect.top + scRect.height / 2 - 20) + 'px';
+
+      // ② À droite, aligné sur le haut de l'arbre
+      c2.style.right = '20px';
+      c2.style.top   = (edRect.top + 40) + 'px';
+
+      // ③ À droite, aligné sur la ligne en édition
+      c3.style.right = '20px';
+      c3.style.top   = (editRect.top + editRect.height / 2 - 20) + 'px';
+
+      // Focus le champ pour afficher le curseur
+      document.getElementById('editing-input').focus();
+    });
+  }
+</script>
+</body>
+</html>
