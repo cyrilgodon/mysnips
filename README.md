@@ -28,7 +28,7 @@ No account. No cloud. No tracking. Your data never leaves your browser.
 1. Download or clone this repo
 2. Go to `chrome://extensions/`
 3. Enable **Developer mode**
-4. Click **Load unpacked** → select the `extension/` folder
+4. Click **Load unpacked** → select the `mysnips/` folder
 
 ---
 
