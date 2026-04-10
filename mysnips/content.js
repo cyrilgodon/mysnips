@@ -528,6 +528,10 @@ function openPanel(tree) {
 
 chrome.runtime.onMessage.addListener((msg) => {
   if (msg.type === 'OPEN_PANEL') {
+    // N'ouvrir que dans le frame qui a le focus (gère les iframes Jotform, Gmail, etc.)
+    const active = document.activeElement;
+    const hasFocus = document.hasFocus() && active && active.tagName !== 'IFRAME';
+    if (!hasFocus) return;
     chrome.storage.local.get('snips', data => {
       openPanel((data.snips || { tree: [] }).tree);
     });
