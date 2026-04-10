@@ -242,8 +242,7 @@ function render(tree, term) {
 
   if (!tree.length) {
     container.innerHTML =
-      '<p class="empty">Aucun snippet encore.<br>' +
-      '<a id="open-options" href="#">Ouvrir l\'éditeur →</a></p>';
+      `<p class="empty">${t('noSnippets')}<br><a id="open-options" href="#">${t('openEditor')}</a></p>`;
     document.getElementById('open-options').addEventListener('click', e => {
       e.preventDefault();
       chrome.runtime.openOptionsPage();
@@ -253,7 +252,7 @@ function render(tree, term) {
 
   const filtered = term ? tree.filter(n => hasMatch(n, term)) : tree;
   if (term && !filtered.length) {
-    container.innerHTML = '<p class="empty">Aucun résultat.</p>';
+    container.innerHTML = `<p class="empty">${t('noResults')}</p>`;
     return;
   }
 
@@ -309,6 +308,10 @@ document.addEventListener('DOMContentLoaded', () => {
           break;
       }
     });
+
+    // i18n
+    document.getElementById('search').placeholder = t('searchPlaceholder');
+    document.getElementById('btn-options').title = t('openOptions');
 
     document.getElementById('btn-options').addEventListener('click', () => {
       chrome.runtime.openOptionsPage();

@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>MySnips</title>
+  <!-- i18n applied via JS -->
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
   <div id="app">
     <div class="header">
-      <input type="search" id="search" placeholder="Rechercher…" autocomplete="off" autofocus>
+      <input type="search" id="search" autocomplete="off" autofocus>
       <button id="btn-options" title="Gérer les snippets" class="icon-btn">⚙</button>
     </div>
     <div id="tree"></div>
     <div id="toast" class="toast hidden">Copié !</div>
   </div>
+  <script src="i18n.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

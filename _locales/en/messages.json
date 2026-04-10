@@ -1,0 +1,107 @@
+{
+  "extName": {
+    "message": "MySnips"
+  },
+  "extDescription": {
+    "message": "Personal snippets organized in a tree — private use"
+  },
+  "searchPlaceholder": {
+    "message": "Search…"
+  },
+  "openOptions": {
+    "message": "Manage snippets"
+  },
+  "noSnippets": {
+    "message": "No snippets yet."
+  },
+  "openEditor": {
+    "message": "Open editor →"
+  },
+  "noResults": {
+    "message": "No results."
+  },
+  "copied": {
+    "message": "Copied!"
+  },
+  "inserted": {
+    "message": "Inserted!"
+  },
+  "optionsTitle": {
+    "message": "MySnips — Editor"
+  },
+  "tabVisual": {
+    "message": "Tree"
+  },
+  "tabJson": {
+    "message": "Raw JSON"
+  },
+  "importBtn": {
+    "message": "⬆ Import file"
+  },
+  "exportBtn": {
+    "message": "⬇ Export file"
+  },
+  "jsonApply": {
+    "message": "✓ Apply"
+  },
+  "jsonReset": {
+    "message": "↺ Discard changes"
+  },
+  "jsonHint": {
+    "message": "Edit JSON directly. Ctrl+S or the Apply button to save. Syntax errors are shown before anything is overwritten."
+  },
+  "visualHint": {
+    "message": "Double-click a name or value to edit. Enter to confirm, Escape to cancel. For long values: Ctrl+Enter to confirm."
+  },
+  "shortcutLabel": {
+    "message": "Keyboard shortcut:"
+  },
+  "shortcutNone": {
+    "message": "No shortcut configured"
+  },
+  "shortcutConfigure": {
+    "message": "Configure"
+  },
+  "savedStatus": {
+    "message": "Saved ✓"
+  },
+  "addFolder": {
+    "message": "＋ Folder"
+  },
+  "addSnippet": {
+    "message": "＋ Snippet"
+  },
+  "folderNamePrompt": {
+    "message": "Folder name:"
+  },
+  "snippetNamePrompt": {
+    "message": "Snippet name:"
+  },
+  "snippetValuePrompt": {
+    "message": "Value:"
+  },
+  "deleteFolder": {
+    "message": "Delete folder \"%s\" and all its contents?"
+  },
+  "deleteSnippet": {
+    "message": "Delete \"%s\"?"
+  },
+  "importReplace": {
+    "message": "How to import?\n\nOK     → Replace all\nCancel → Merge (append)"
+  },
+  "importError": {
+    "message": "Import error: "
+  },
+  "moveUp": {
+    "message": "Move up"
+  },
+  "moveDown": {
+    "message": "Move down"
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "closePanel": {
+    "message": "Close"
+  }
+}

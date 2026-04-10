@@ -1,0 +1,107 @@
+{
+  "extName": {
+    "message": "MySnips"
+  },
+  "extDescription": {
+    "message": "Snippets personnels organisés en arbre — usage privé"
+  },
+  "searchPlaceholder": {
+    "message": "Rechercher…"
+  },
+  "openOptions": {
+    "message": "Gérer les snippets"
+  },
+  "noSnippets": {
+    "message": "Aucun snippet encore."
+  },
+  "openEditor": {
+    "message": "Ouvrir l'éditeur →"
+  },
+  "noResults": {
+    "message": "Aucun résultat."
+  },
+  "copied": {
+    "message": "Copié !"
+  },
+  "inserted": {
+    "message": "Inséré !"
+  },
+  "optionsTitle": {
+    "message": "MySnips — Éditeur"
+  },
+  "tabVisual": {
+    "message": "Arbre"
+  },
+  "tabJson": {
+    "message": "JSON brut"
+  },
+  "importBtn": {
+    "message": "⬆ Importer fichier"
+  },
+  "exportBtn": {
+    "message": "⬇ Exporter fichier"
+  },
+  "jsonApply": {
+    "message": "✓ Appliquer"
+  },
+  "jsonReset": {
+    "message": "↺ Annuler les changements"
+  },
+  "jsonHint": {
+    "message": "Édite le JSON directement. Ctrl+S ou le bouton \"Appliquer\" pour sauvegarder. Les erreurs de syntaxe sont signalées avant d'écraser quoi que ce soit."
+  },
+  "visualHint": {
+    "message": "Double-clic sur un nom ou une valeur pour l'éditer. Entrée pour valider, Échap pour annuler. Pour les valeurs longues : Ctrl+Entrée pour valider."
+  },
+  "shortcutLabel": {
+    "message": "Raccourci clavier :"
+  },
+  "shortcutNone": {
+    "message": "Aucun raccourci configuré"
+  },
+  "shortcutConfigure": {
+    "message": "Configurer"
+  },
+  "savedStatus": {
+    "message": "Sauvegardé ✓"
+  },
+  "addFolder": {
+    "message": "＋ Dossier"
+  },
+  "addSnippet": {
+    "message": "＋ Snippet"
+  },
+  "folderNamePrompt": {
+    "message": "Nom du dossier :"
+  },
+  "snippetNamePrompt": {
+    "message": "Nom du snippet :"
+  },
+  "snippetValuePrompt": {
+    "message": "Valeur :"
+  },
+  "deleteFolder": {
+    "message": "Supprimer le dossier \"%s\" et tout son contenu ?"
+  },
+  "deleteSnippet": {
+    "message": "Supprimer \"%s\" ?"
+  },
+  "importReplace": {
+    "message": "Comment importer ?\n\nOK     → Remplacer tout\nAnnuler → Fusionner (ajouter à la suite)"
+  },
+  "importError": {
+    "message": "Erreur lors de l'import : "
+  },
+  "moveUp": {
+    "message": "Monter"
+  },
+  "moveDown": {
+    "message": "Descendre"
+  },
+  "delete": {
+    "message": "Supprimer"
+  },
+  "closePanel": {
+    "message": "Fermer"
+  }
+}

@@ -1,5 +1,8 @@
 'use strict';
 
+// i18n helper
+function t(key) { return chrome.i18n.getMessage(key) || key; }
+
 // ── Focus tracking ────────────────────────────────────────────────────────────
 
 let lastFocused = null;
@@ -393,9 +396,9 @@ function renderTree(root, tree, term) {
   elMap.clear();
   const container = root.getElementById('tree');
   container.innerHTML = '';
-  if (!tree.length) { container.innerHTML = '<p class="empty">Aucun snippet.</p>'; return; }
+  if (!tree.length) { container.innerHTML = `<p class="empty">${t('noSnippets')}</p>`; return; }
   const filtered = term ? tree.filter(n => matchNode(n, term)) : tree;
-  if (term && !filtered.length) { container.innerHTML = '<p class="empty">Aucun résultat.</p>'; return; }
+  if (term && !filtered.length) { container.innerHTML = `<p class="empty">${t('noResults')}</p>`; return; }
   renderNodes(tree, container, term, 0, null, root);
 }
 
@@ -424,13 +427,13 @@ function openPanel(tree) {
   const search = document.createElement('input');
   search.type = 'search';
   search.id = 'search';
-  search.placeholder = 'Rechercher…';
+  search.placeholder = t('searchPlaceholder');
   search.autocomplete = 'off';
 
   const closeBtn = document.createElement('button');
   closeBtn.className = 'icon-btn';
   closeBtn.textContent = '✕';
-  closeBtn.title = 'Fermer';
+  closeBtn.title = t('closePanel');
   closeBtn.addEventListener('click', closePanel);
 
   header.appendChild(search);

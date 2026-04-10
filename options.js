@@ -30,7 +30,7 @@ function loadTree() {
 }
 
 function saveTree() {
-  chrome.storage.local.set({ snips: { tree } }, () => showStatus('Sauvegardé ✓'));
+  chrome.storage.local.set({ snips: { tree } }, () => showStatus(t('savedStatus')));
 }
 
 // ── Utils ─────────────────────────────────────────────────────────────────────
@@ -162,24 +162,24 @@ function createActions(node, siblings, index) {
   const div = document.createElement('div');
   div.className = 'item-actions';
 
-  div.appendChild(mkBtn('⬆', 'Monter', () => {
+  div.appendChild(mkBtn('⬆', t('moveUp'), () => {
     if (index > 0) {
       [siblings[index - 1], siblings[index]] = [siblings[index], siblings[index - 1]];
       saveTree(); render();
     }
   }));
 
-  div.appendChild(mkBtn('⬇', 'Descendre', () => {
+  div.appendChild(mkBtn('⬇', t('moveDown'), () => {
     if (index < siblings.length - 1) {
       [siblings[index], siblings[index + 1]] = [siblings[index + 1], siblings[index]];
       saveTree(); render();
     }
   }));
 
-  const del = mkBtn('🗑', 'Supprimer', () => {
+  const del = mkBtn('🗑', t('delete'), () => {
     const label = node.type === 'folder'
-      ? `Supprimer le dossier "${node.name}" et tout son contenu ?`
-      : `Supprimer "${node.name}" ?`;
+      ? t('deleteFolder').replace('%s', node.name)
+      : t('deleteSnippet').replace('%s', node.name);
     if (confirm(label)) {
       siblings.splice(index, 1);
       saveTree(); render();
@@ -209,9 +209,9 @@ function createAddButtons(siblings, depth) {
 
   const addFolder = document.createElement('button');
   addFolder.className = 'btn-add';
-  addFolder.textContent = '＋ Dossier';
+  addFolder.textContent = t('addFolder');
   addFolder.addEventListener('click', () => {
-    const name = prompt('Nom du dossier :');
+    const name = prompt(t('folderNamePrompt'));
     if (name?.trim()) {
       siblings.push({ id: uid(), type: 'folder', name: name.trim(), children: [] });
       saveTree(); render();
@@ -220,11 +220,11 @@ function createAddButtons(siblings, depth) {
 
   const addSnippet = document.createElement('button');
   addSnippet.className = 'btn-add';
-  addSnippet.textContent = '＋ Snippet';
+  addSnippet.textContent = t('addSnippet');
   addSnippet.addEventListener('click', () => {
-    const name = prompt('Nom du snippet :');
+    const name = prompt(t('snippetNamePrompt'));
     if (!name?.trim()) return;
-    const value = prompt('Valeur :');
+    const value = prompt(t('snippetValuePrompt'));
     if (value === null) return;
     siblings.push({ id: uid(), type: 'snippet', name: name.trim(), value });
     saveTree(); render();
@@ -301,15 +301,11 @@ function importJSON(file) {
     try {
       const data = JSON.parse(e.target.result);
       if (!Array.isArray(data.tree)) throw new Error('Champ "tree" manquant ou invalide.');
-      const replace = confirm(
-        'Comment importer ?\n\n' +
-        'OK     → Remplacer tout\n' +
-        'Annuler → Fusionner (ajouter à la suite)'
-      );
+      const replace = confirm(t('importReplace'));
       tree = replace ? data.tree : [...tree, ...data.tree];
       saveTree(); render();
     } catch (err) {
-      alert('Erreur lors de l\'import : ' + err.message);
+      alert(t('importError') + err.message);
     }
   };
   reader.readAsText(file);
@@ -380,6 +376,7 @@ function initShortcut() {
       span.className = 'shortcut-none';
       span.textContent = 'Aucun raccourci configuré';
       valueEl.appendChild(span);
+      linkEl.textContent = t('shortcutConfigure');
       linkEl.classList.remove('hidden');
     }
   });
@@ -388,6 +385,18 @@ function initShortcut() {
 // ── Init ──────────────────────────────────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
+  // i18n static labels
+  document.title = t('optionsTitle');
+  document.getElementById('btn-import').textContent = t('importBtn');
+  document.getElementById('btn-export').textContent = t('exportBtn');
+  document.getElementById('btn-json-apply').textContent = t('jsonApply');
+  document.getElementById('btn-json-reset').textContent = t('jsonReset');
+  document.querySelector('#pane-visual .hint').textContent = t('visualHint');
+  document.querySelector('#pane-json .hint').textContent = t('jsonHint');
+  document.querySelector('.tab[data-tab="visual"]').textContent = t('tabVisual');
+  document.querySelector('.tab[data-tab="json"]').textContent = t('tabJson');
+  document.querySelector('.shortcut-label').textContent = t('shortcutLabel');
+
   loadTree();
   initTabs();
   initShortcut();
