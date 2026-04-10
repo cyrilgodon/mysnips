@@ -55,22 +55,26 @@ function getPosition() {
   const panelW = 360;
   const panelH = 420;
 
-  if (lastFocused) {
-    const r = lastFocused.getBoundingClientRect();
+  // Utilise activeElement en priorité (plus fiable que lastFocused sur Gmail etc.)
+  const anchor = document.activeElement !== document.body ? document.activeElement : lastFocused;
+
+  if (anchor) {
+    const r = anchor.getBoundingClientRect();
     const spaceBelow = window.innerHeight - r.bottom;
     const spaceAbove = r.top;
 
     // Préférence : en dessous si la place suffit, sinon au-dessus.
     let top;
     if (spaceBelow >= panelH || spaceBelow >= spaceAbove) {
-      // En dessous
-      top = r.bottom + window.scrollY + 4;
+      top = r.bottom + 4;
     } else {
-      // Au-dessus
-      top = r.top + window.scrollY - panelH - 4;
+      top = r.top - panelH - 4;
     }
+    // Garder dans le viewport
+    if (top + panelH > window.innerHeight - 4) top = window.innerHeight - panelH - 4;
+    if (top < 4) top = 4;
 
-    let left = r.left + window.scrollX;
+    let left = r.left;
     if (left + panelW > window.innerWidth - 8) left = window.innerWidth - panelW - 8;
     if (left < 4) left = 4;
 
@@ -79,7 +83,7 @@ function getPosition() {
 
   // Fallback centre écran
   return {
-    top: window.scrollY + Math.max(20, (window.innerHeight - panelH) / 2),
+    top: Math.max(20, (window.innerHeight - panelH) / 2),
     left: Math.max(8, (window.innerWidth - panelW) / 2),
   };
 }
@@ -89,7 +93,7 @@ const PANEL_CSS = `
 
 :host {
   all: initial;
-  position: absolute;
+  position: fixed;
   z-index: 2147483647;
   font-family: system-ui, -apple-system, sans-serif;
   font-size: 13px;
@@ -411,7 +415,7 @@ function openPanel(tree) {
   if (panelHost) return; // déjà ouvert, on ignore
 
   panelHost = document.createElement('div');
-  panelHost.style.cssText = 'position:absolute;z-index:2147483647;';
+  panelHost.style.cssText = 'position:fixed;z-index:2147483647;';
   document.documentElement.appendChild(panelHost);
 
   const shadow = panelHost.attachShadow({ mode: 'closed' });
