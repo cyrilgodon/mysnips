@@ -1,0 +1,50 @@
+{
+  "tree": [
+    {
+      "id": "folder-elevatio",
+      "type": "folder",
+      "name": "Elevatio",
+      "children": [
+        { "id": "elevatio-siret", "type": "snippet", "name": "SIRET", "value": "90992898800015" },
+        { "id": "elevatio-tva", "type": "snippet", "name": "N° TVA", "value": "FR75909928988" }
+      ]
+    },
+    {
+      "id": "folder-zeolitop",
+      "type": "folder",
+      "name": "Zeolitop",
+      "children": [
+        { "id": "zeolitop-siret", "type": "snippet", "name": "SIRET", "value": "89481398900015" },
+        { "id": "zeolitop-tva", "type": "snippet", "name": "N° TVA", "value": "FR56894813989" }
+      ]
+    },
+    {
+      "id": "folder-elevatio-charte",
+      "type": "folder",
+      "name": "Charte graphique",
+      "children": [
+        { "id": "elev-c1", "type": "snippet", "name": "Principale (mauve)", "value": "#a05e8e" },
+        { "id": "elev-c2", "type": "snippet", "name": "Complémentaire (bleu)", "value": "#3286A7" },
+        { "id": "elev-c3", "type": "snippet", "name": "Texte normal (gris bleu)", "value": "#44546A" },
+        { "id": "elev-c4", "type": "snippet", "name": "Discret (bleu foncé)", "value": "#003551" },
+        { "id": "elev-c5", "type": "snippet", "name": "Violet foncé", "value": "#5E2963" },
+        { "id": "elev-c6", "type": "snippet", "name": "Rouge", "value": "#B0413E" },
+        { "id": "elev-c7", "type": "snippet", "name": "Orange", "value": "#D97A32" },
+        { "id": "elev-c8", "type": "snippet", "name": "Vert", "value": "#3B915E" }
+      ]
+    },
+    {
+      "id": "folder-mails",
+      "type": "folder",
+      "name": "Mails",
+      "children": [
+        {
+          "id": "mail-zoom",
+          "type": "snippet",
+          "name": "Proposition visio Zoom",
+          "value": "Bonjour,\nSi vous préférez, je vous propose de nous retrouver par visio sur Zoom pour notre rendez-vous.\nA tout à l'heure,\nCyril"
+        }
+      ]
+    }
+  ]
+}

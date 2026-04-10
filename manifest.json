@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "MySnips",
+  "version": "1.1.0",
+  "description": "Snippets personnels organisés en arbre — usage privé",
+  "permissions": ["storage", "contextMenus", "scripting", "clipboardWrite"],
+  "host_permissions": ["<all_urls>"],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_title": "MySnips"
+  },
+  "commands": {
+    "open-panel": {
+      "suggested_key": { "default": "Alt+S" },
+      "description": "Ouvrir MySnips"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

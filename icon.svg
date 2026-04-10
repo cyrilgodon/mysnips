@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Fond arrondi -->
+  <rect width="128" height="128" rx="28" fill="#3286A7"/>
+
+  <!-- Scisseaux stylisés, blancs, centrés, marges généreuses -->
+  <!-- Pivot central -->
+  <circle cx="64" cy="64" r="5" fill="white" opacity="0.95"/>
+
+  <!-- Lame haute-gauche -->
+  <line x1="64" y1="64" x2="36" y2="38" stroke="white" stroke-width="7" stroke-linecap="round" opacity="0.95"/>
+  <!-- Anneau haut-gauche -->
+  <circle cx="32" cy="34" r="10" fill="none" stroke="white" stroke-width="6" opacity="0.95"/>
+
+  <!-- Lame basse-gauche -->
+  <line x1="64" y1="64" x2="36" y2="90" stroke="white" stroke-width="7" stroke-linecap="round" opacity="0.95"/>
+  <!-- Anneau bas-gauche -->
+  <circle cx="32" cy="94" r="10" fill="none" stroke="white" stroke-width="6" opacity="0.95"/>
+
+  <!-- Segment droite (ce qu'on coupe) -->
+  <line x1="64" y1="64" x2="96" y2="50" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+  <line x1="64" y1="64" x2="96" y2="78" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.3"/>
+</svg>
