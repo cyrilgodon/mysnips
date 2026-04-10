@@ -17,19 +17,21 @@ function buildMenus(tree) {
         if (count > 200) return;
         count++;
         if (node.type === 'folder') {
+          const folderTitle = ('📁 ' + (node.name || '…')).trim() || '📁';
           chrome.contextMenus.create({
             id: 'folder-' + node.id,
             parentId,
-            title: '📁 ' + node.name,
+            title: folderTitle,
             contexts: ['editable'],
           });
           if (node.children?.length) addNodes(node.children, 'folder-' + node.id);
         } else {
           const preview = (node.value || '').slice(0, 40).replace(/\n/g, ' ');
+          const snippetTitle = node.name || '…';
           chrome.contextMenus.create({
             id: 'snip-' + node.id,
             parentId,
-            title: node.name + (preview ? '  —  ' + preview : ''),
+            title: snippetTitle + (preview ? '  —  ' + preview : ''),
             contexts: ['editable'],
           });
         }
