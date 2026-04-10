@@ -1,3 +1,6 @@
+// Guard contre la double-injection (SPA, iframes)
+if (typeof window.__mysnipsLoaded === 'undefined') {
+window.__mysnipsLoaded = true;
 'use strict';
 
 // i18n helper
@@ -533,3 +536,5 @@ chrome.runtime.onMessage.addListener((msg) => {
     insertText(msg.value);
   }
 });
+
+} // end guard __mysnipsLoaded
