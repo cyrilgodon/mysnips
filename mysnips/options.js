@@ -153,7 +153,10 @@ function renderItem(node, siblings, index, depth, openFolders) {
     valueWrap.className = 'item-value item-value-wrap';
     valueWrap.style.cssText = 'display:flex;align-items:center;flex:1;min-width:60px;cursor:text;';
     valueWrap.title = node.value || '';
-    valueWrap.addEventListener('click', () => startEditValue(valueWrap, node));
+    valueWrap.addEventListener('mousedown', e => {
+      e.preventDefault(); // empêche le browser de déplacer le focus avant notre appel
+      startEditValue(valueWrap, node);
+    });
 
     const val = node.value || '';
     if (isHexColor(val)) valueWrap.appendChild(colorSwatch(val.trim()));
@@ -375,7 +378,7 @@ function startEditValue(el, node) {
   ta.addEventListener('blur', commitOnce);
 
   el.replaceWith(ta);
-  ta.focus();
+  setTimeout(() => ta.focus(), 0);
 }
 
 // ── Import / Export ───────────────────────────────────────────────────────────
