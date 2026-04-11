@@ -159,8 +159,12 @@ function renderItem(node, siblings, index, depth, openFolders) {
     if (isHexColor(val)) valueWrap.appendChild(colorSwatch(val.trim()));
 
     const valueText = document.createElement('span');
-    valueText.textContent = val ? truncate(val, 80) : '';
-    if (!val) valueText.style.cssText = 'color:#bbb;font-style:italic;';
+    if (val) {
+      valueText.textContent = truncate(val, 80);
+    } else {
+      valueText.textContent = 'click to add…';
+      valueText.style.cssText = 'color:#ccc;font-style:italic;';
+    }
     valueWrap.appendChild(valueText);
 
     fields.appendChild(name);
