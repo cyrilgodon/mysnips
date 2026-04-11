@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "MySnips"
+    "message": "MySnips — Text Expander"
   },
   "extDescription": {
-    "message": "Collez instantanément vos textes récurrents dans n'importe quel champ — organisés en dossiers, accessibles avec Alt+S."
+    "message": "Extension de texte & gestionnaire de snippets — insérez vos modèles et réponses types instantanément. Touche Alt+S."
   },
   "searchPlaceholder": {
     "message": "Search…"
@@ -103,5 +103,14 @@
   },
   "closePanel": {
     "message": "Fermer"
+  },
+  "footerSuggest": {
+    "message": "Suggérer une fonctionnalité"
+  },
+  "footerReview": {
+    "message": "Laisser un avis"
+  },
+  "footerMail": {
+    "message": "Envoyer un email"
   }
 }

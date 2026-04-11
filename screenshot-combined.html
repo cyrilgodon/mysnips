@@ -12,8 +12,8 @@
       align-items: flex-start;
       justify-content: center;
       min-height: 100vh;
-      padding: 48px 40px;
-      gap: 40px;
+      padding: 48px 32px;
+      gap: 32px;
     }
 
     /* ====== COLONNES ====== */
@@ -21,7 +21,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
       flex: 1;
       max-width: 600px;
     }
@@ -159,29 +159,99 @@
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-      padding: 32px 36px;
+      padding: 28px 30px;
       width: 100%;
     }
-    .demo-card h2 { font-size: 17px; font-weight: 700; margin-bottom: 22px; color: #1a1a1a; }
-    label { display: block; font-size: 12px; font-weight: 600; color: #444; margin-bottom: 5px; }
+    .demo-card h2 { font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #1a1a1a; }
+    label { display: block; font-size: 12px; font-weight: 600; color: #444; margin-bottom: 4px; }
     input, textarea {
-      width: 100%; padding: 9px 11px;
+      width: 100%; padding: 8px 10px;
       border: 1px solid #ddd; border-radius: 7px;
       font-size: 13px; font-family: inherit; color: #1a1a1a;
-      background: #fafafa; outline: none; margin-bottom: 16px;
+      background: #fafafa; outline: none; margin-bottom: 14px;
     }
-    input:nth-of-type(2) { border-color: #3286A7; background: #fff; }
-    textarea { height: 80px; resize: none; }
+    textarea { height: 72px; resize: none; }
+
+    /* Wrapper position relative pour le panel flottant */
+    .demo-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    /* ====== BULLES D'ANNOTATION ====== */
+    .callout {
+      position: relative;
+      background: #3286A7;
+      color: #fff;
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.4;
+      max-width: 130px;
+      box-shadow: 0 4px 16px rgba(50,134,167,0.4);
+      z-index: 20;
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+    }
+    .callout .bnum {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 20px;
+      height: 20px;
+      background: #fff;
+      color: #3286A7;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    /* Flèche → droite */
+    .callout.arrow-right::after {
+      content: '';
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-left-color: #3286A7;
+    }
+    /* Flèche ← gauche */
+    .callout.arrow-left::after {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-right-color: #3286A7;
+    }
+    /* Flèche ↓ bas */
+    .callout.arrow-down::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: #3286A7;
+    }
 
     /* Panel MySnips flottant simulé */
     .snips-panel {
+      position: absolute;
+      top: 185px; /* juste sous le champ VAT, bord gauche aligné avec input */
+      left: 30px;
+      width: 281px; /* même largeur que le champ VAT */
       border: 1px solid #ddd;
       border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.22);
       background: #fff;
-      width: 100%;
       overflow: hidden;
       font-size: 12px;
+      z-index: 10;
     }
     .panel-search {
       display: flex;
@@ -192,198 +262,247 @@
     }
     .panel-search input {
       flex: 1; border: 1px solid #ddd; border-radius: 5px;
-      padding: 5px 9px; font-size: 12px; margin: 0;
+      padding: 4px 8px; font-size: 12px; margin: 0;
       background: #fafafa;
     }
     .panel-close { color: #999; font-size: 14px; cursor: pointer; }
     .panel-row {
       display: flex; align-items: center; gap: 6px;
-      padding: 5px 10px; min-height: 30px;
+      padding: 5px 10px; min-height: 28px;
       border-bottom: 1px solid #f5f5f5;
     }
     .panel-row.selected { background: #e8f4f8; }
     .panel-row .toggle { font-size: 9px; color: #999; width: 10px; }
     .panel-row .pname { flex-shrink: 0; }
-    .panel-row .pvalue { color: #888; font-family: monospace; font-size: 11px; margin-left: 4px; }
+    .panel-row .pvalue { color: #888; font-family: monospace; font-size: 11px; margin-left: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .panel-row.cursor { background: #3286A7; color: #fff; }
+    .panel-row.cursor .pname { color: #fff; font-weight: 600; }
+    .panel-row.cursor .pvalue { color: rgba(255,255,255,0.8); }
   </style>
 </head>
 <body>
 
-  <!-- ① Configuration -->
+  <!-- ① Configuration — options card + callouts à droite -->
   <div class="col">
     <div class="step-title">
       <span class="step-num">1</span>
-      <span class="step-text">Configure your most-used snippets<br>directly in the extension</span>
+      <span class="step-text" id="step1-text">Configure your most-used snippets<br>directly in the extension</span>
     </div>
 
-    <div class="options-card">
-      <div class="opt-header">
-        <h2>✂️ MySnips Configuration</h2>
-        <div class="opt-header-btns">
-          <button class="btn-sm">⬆ Import</button>
-          <button class="btn-sm">⬇ Export</button>
-        </div>
-      </div>
-      <div class="shortcut-bar">
-        <span style="color:#888">Keyboard shortcut:</span>
-        <span class="shortcut-key">Alt+S</span>
-        <span style="color:#4a90e2;font-size:12px;">· Change</span>
-      </div>
-      <div class="tabs">
-        <div class="tab active">Tree view</div>
-        <div class="tab">Raw JSON</div>
-      </div>
-      <div class="hint">Double-click a name or value to edit inline.</div>
+    <!-- flex: options card | callouts droite (position:relative pour les bulles absolues) -->
+    <div style="display:flex; gap:12px; width:100%; align-items:flex-start; position:relative;">
 
-      <!-- Elevatio -->
-      <div class="item-row folder-row">
-        <span class="toggle">▼</span>
-        <span>📁</span>
-        <span class="item-name">Elevatio</span>
-      </div>
-      <div class="item-row indent">
-        <span class="toggle"></span>
-        <span>✂️</span>
-        <div class="snippet-fields">
-          <span class="item-name">VAT number</span>
-          <span class="sep">→</span>
-          <span class="item-value">FR12345678900</span>
+      <!-- Options card -->
+      <div class="options-card" style="flex:1; min-width:0;">
+        <div class="opt-header">
+          <h2 id="editor-title">✂️ MySnips — Editor</h2>
+          <div class="opt-header-btns">
+            <button class="btn-sm" id="import-btn">⬆ Import</button>
+            <button class="btn-sm" id="export-btn">⬇ Export</button>
+          </div>
         </div>
-      </div>
-      <div class="item-row indent">
-        <span class="toggle"></span>
-        <span>✂️</span>
-        <div class="snippet-fields">
-          <span class="item-name">Company ID</span>
-          <span class="sep">→</span>
-          <span class="item-value">12345678900015</span>
+        <div class="shortcut-bar">
+          <span id="shortcut-label" style="color:#888">Keyboard shortcut:</span>
+          <span class="shortcut-key">Alt+S</span>
+          <span id="configure-link" style="color:#4a90e2;font-size:12px;">· Configure</span>
         </div>
-      </div>
-      <div class="item-row indent">
-        <span class="toggle"></span>
-        <span>✂️</span>
-        <div class="snippet-fields">
-          <span class="item-name">Address</span>
-          <span class="sep">→</span>
-          <span class="item-value">34 Boulevard des Italiens</span>
+        <div class="tabs">
+          <div class="tab active" id="tab-tree">Tree view</div>
+          <div class="tab" id="tab-json">Raw JSON</div>
         </div>
-      </div>
-      <div class="add-row indent"><button class="btn-add">＋ snippet</button><button class="btn-add">📁 folder</button></div>
+        <div class="hint" id="hint-text">Double-click a name or value to edit inline.</div>
 
-      <!-- Zeolitop -->
-      <div class="item-row folder-row">
-        <span class="toggle">▶</span>
-        <span>📁</span>
-        <span class="item-name">Zeolitop</span>
+        <!-- Company -->
+        <div class="item-row folder-row">
+          <span class="toggle">▼</span><span>📁</span>
+          <span class="item-name" id="opt-company">Company</span>
+        </div>
+        <div class="item-row indent">
+          <span class="toggle"></span><span>≡</span>
+          <div class="snippet-fields">
+            <span class="item-name" id="opt-vat">VAT number</span>
+            <span class="sep">→</span>
+            <span class="item-value">FR12345678900</span>
+          </div>
+        </div>
+        <div class="item-row indent">
+          <span class="toggle"></span><span>≡</span>
+          <div class="snippet-fields">
+            <span class="item-name" id="opt-companyid">Company ID</span>
+            <span class="sep">→</span>
+            <span class="item-value">12345678900015</span>
+          </div>
+        </div>
+        <!-- Address row en état d'ÉDITION INLINE — champ actif avec curseur -->
+        <div class="item-row indent" style="background:#f0f7ff;">
+          <span class="toggle"></span><span>≡</span>
+          <div class="snippet-fields">
+            <span class="item-name" id="opt-address">Address</span>
+            <span class="sep">→</span>
+            <span style="display:inline-flex;align-items:center;border:1.5px solid #4a90e2;border-radius:4px;padding:1px 6px;background:#fff;gap:0;">
+              <span style="font-family:monospace;font-size:11px;color:#1a1a1a;letter-spacing:0;">34 Bd des Italiens</span><span style="display:inline-block;width:1.5px;height:11px;background:#4a90e2;margin-left:2px;"></span>
+            </span>
+          </div>
+        </div>
+        <div class="add-row indent"><button class="btn-add">＋ snippet</button><button class="btn-add">📁 folder</button></div>
+
+        <!-- Booking links -->
+        <div class="item-row folder-row">
+          <span class="toggle">▼</span><span>📁</span>
+          <span class="item-name" id="opt-booking">Booking links</span>
+        </div>
+        <div class="item-row indent">
+          <span class="toggle"></span><span>≡</span>
+          <div class="snippet-fields">
+            <span class="item-name">Calendly</span>
+            <span class="sep">→</span>
+            <span class="item-value">calendly.com/myname/30min</span>
+          </div>
+        </div>
+        <div class="item-row indent">
+          <span class="toggle"></span><span>≡</span>
+          <div class="snippet-fields">
+            <span class="item-name">Zoom</span>
+            <span class="sep">→</span>
+            <span class="item-value">zoom.us/my/myname</span>
+          </div>
+        </div>
+        <div class="add-row indent"><button class="btn-add">＋ snippet</button><button class="btn-add">📁 folder</button></div>
+
+        <!-- Brand colors -->
+        <div class="item-row folder-row">
+          <span class="toggle">▼</span><span>📁</span>
+          <span class="item-name" id="opt-colors">Brand colors</span>
+        </div>
+        <div class="item-row indent">
+          <span class="toggle"></span><span>≡</span>
+          <div class="snippet-fields">
+            <span class="item-name" id="opt-color1">Primary (mauve)</span>
+            <span class="sep">→</span>
+            <span class="color-swatch" style="background:#a05e8e;"></span>
+            <span class="item-value">#a05e8e</span>
+          </div>
+        </div>
+        <div class="item-row indent">
+          <span class="toggle"></span><span>≡</span>
+          <div class="snippet-fields">
+            <span class="item-name" id="opt-color2">Secondary (blue)</span>
+            <span class="sep">→</span>
+            <span class="color-swatch" style="background:#3286A7;"></span>
+            <span class="item-value">#3286A7</span>
+          </div>
+        </div>
+        <div class="add-row indent"><button class="btn-add">＋ snippet</button><button class="btn-add">📁 folder</button></div>
+
+        <!-- Emails -->
+        <div class="item-row folder-row">
+          <span class="toggle">▶</span><span>📁</span>
+          <span class="item-name" id="opt-emails">Emails</span>
+        </div>
+        <div class="add-row" style="padding-left:32px;"><button class="btn-add">＋ snippet</button><button class="btn-add">📁 folder</button></div>
       </div>
 
-      <!-- Brand colors -->
-      <div class="item-row folder-row">
-        <span class="toggle">▼</span>
-        <span>📁</span>
-        <span class="item-name">Brand colors</span>
-      </div>
-      <div class="item-row indent">
-        <span class="toggle"></span>
-        <span>✂️</span>
-        <div class="snippet-fields">
-          <span class="item-name">Primary (mauve)</span>
-          <span class="sep">→</span>
-          <span class="color-swatch" style="background:#a05e8e;"></span>
-          <span class="item-value">#a05e8e</span>
+      <!-- Callouts à droite de la colonne 1 — positionnés absolument sur la carte -->
+      <div style="width:140px; flex-shrink:0; position:relative; min-height:320px;">
+        <div class="callout arrow-left" id="col1-bubble1" style="position:absolute; top:42px; width:140px;">
+          <span class="bnum">1</span>
+          <span id="col1-bubble1-text">Customize your Alt+S shortcut</span>
+        </div>
+        <div class="callout arrow-left" id="col1-bubble2" style="position:absolute; top:128px; width:140px;">
+          <span class="bnum">2</span>
+          <span id="col1-bubble2-text">Organize in thematic folders</span>
+        </div>
+        <div class="callout arrow-left" id="col1-bubble3" style="position:absolute; top:218px; width:140px;">
+          <span class="bnum">3</span>
+          <span id="col1-bubble3-text">Edit inline — double-click any name or value</span>
         </div>
       </div>
-      <div class="item-row indent">
-        <span class="toggle"></span>
-        <span>✂️</span>
-        <div class="snippet-fields">
-          <span class="item-name">Secondary (blue)</span>
-          <span class="sep">→</span>
-          <span class="color-swatch" style="background:#3286A7;"></span>
-          <span class="item-value">#3286A7</span>
-        </div>
-      </div>
-      <div class="item-row indent">
-        <span class="toggle"></span>
-        <span>✂️</span>
-        <div class="snippet-fields">
-          <span class="item-name">Body text</span>
-          <span class="sep">→</span>
-          <span class="color-swatch" style="background:#44546A;"></span>
-          <span class="item-value">#44546A</span>
-        </div>
-      </div>
-      <div class="add-row indent"><button class="btn-add">＋ snippet</button><button class="btn-add">📁 folder</button></div>
 
-      <!-- Emails -->
-      <div class="item-row folder-row">
-        <span class="toggle">▶</span>
-        <span>📁</span>
-        <span class="item-name">Emails</span>
-      </div>
-      <div class="add-row" style="padding-left:32px;"><button class="btn-add">＋ snippet</button><button class="btn-add">📁 folder</button></div>
     </div>
   </div>
 
-  <!-- ② Utilisation -->
+  <!-- ② Utilisation — bulles gauche + form/panel + bulle droite -->
   <div class="col">
     <div class="step-title">
       <span class="step-num">2</span>
-      <span class="step-text">Access them instantly<br>in any text field — press <span style="background:rgba(255,255,255,0.25);border-radius:4px;padding:1px 7px;font-family:monospace;">Alt+S</span></span>
+      <span class="step-text" id="step2-text">Instantly insert your most-used snippets into any text field on any web page — press <span style="background:rgba(255,255,255,0.25);border-radius:4px;padding:1px 7px;font-family:monospace;">Alt+S</span></span>
     </div>
 
-    <div class="demo-card">
-      <h2>Supplier registration</h2>
+    <!-- flex: bulle-gauche | form+panel | bulle-droite -->
+    <div style="display:flex; gap:8px; width:100%; align-items:flex-start;">
 
-      <label>Company name</label>
-      <input type="text" value="Acme Corporation">
+      <!-- Colonne bulles gauche -->
+      <div style="width:145px; flex-shrink:0; display:flex; flex-direction:column; gap:18px; padding-top:82px;">
+        <div class="callout arrow-right" id="callout1">
+          <span class="bnum">1</span>
+          <span id="bubble1">Press <kbd style="background:rgba(255,255,255,0.3);border-radius:3px;padding:1px 5px;font-family:monospace;">Alt+S</kbd> to open your snippets</span>
+        </div>
+        <div class="callout arrow-right" id="callout2">
+          <span class="bnum">2</span>
+          <span id="bubble2">Browse, select, insert</span>
+        </div>
+      </div>
 
-      <label>VAT number</label>
-      <input type="text" value="FR12345678900">
+      <!-- Formulaire + panel flottant -->
+      <div class="demo-wrapper" style="flex:1; min-width:0;">
 
-      <label>Message</label>
-      <textarea>Hello,
+        <div class="demo-card">
+          <h2 id="form-title">Supplier registration</h2>
+
+          <label id="label-company">Company name</label>
+          <input type="text" value="Acme Corporation" id="input-company">
+
+          <label id="label-vat">VAT number</label>
+          <input type="text" value="" id="vat-input" style="border-color:#3286A7;background:#fff;">
+
+          <label id="label-msg">Message</label>
+          <textarea id="textarea-msg">Hello,
 If you prefer, I'd be happy to meet via Zoom.
 Talk soon, Alex</textarea>
-    </div>
+        </div>
 
-    <div class="snips-panel">
-      <div class="panel-search">
-        <input type="text" placeholder="Search...">
-        <span class="panel-close">✕</span>
+        <!-- Panel flottant — aligné avec le champ VAT -->
+        <div class="snips-panel">
+          <div class="panel-search">
+            <input type="text" placeholder="Search..." id="panel-search-input">
+            <span class="panel-close">✕</span>
+          </div>
+          <div class="panel-row">
+            <span class="toggle">▼</span>
+            <span>📁</span>
+            <span class="pname" id="folder-company">Company</span>
+          </div>
+          <div class="panel-row cursor" id="cursor-row">
+            <span class="toggle" style="width:16px;"></span>
+            <span>≡</span>
+            <span class="pname" id="snippet-vat">VAT number</span>
+            <span class="pvalue">FR123456789</span>
+          </div>
+          <div class="panel-row">
+            <span class="toggle" style="width:16px;"></span>
+            <span>≡</span>
+            <span class="pname" id="snippet-id">Company ID</span>
+            <span class="pvalue">12345678900015</span>
+          </div>
+          <div class="panel-row">
+            <span class="toggle" style="width:16px;"></span>
+            <span>≡</span>
+            <span class="pname" id="snippet-addr">Address</span>
+            <span class="pvalue">34 Bd des Italiens</span>
+          </div>
+          <div class="panel-row">
+            <span class="toggle">▶</span>
+            <span>📁</span>
+            <span class="pname" id="folder-booking">Booking links</span>
+          </div>
+          <div class="panel-row">
+            <span class="toggle">▶</span>
+            <span>📁</span>
+            <span class="pname" id="folder-colors">Brand colors</span>
+          </div>
+        </div>
       </div>
-      <div class="panel-row">
-        <span class="toggle">▶</span>
-        <span>📁</span>
-        <span class="pname">Elevatio</span>
-      </div>
-      <div class="panel-row selected">
-        <span class="toggle">▶</span>
-        <span>📁</span>
-        <span class="pname" style="color:#3286A7;font-weight:600;">Zeolitop</span>
-      </div>
-      <div class="panel-row">
-        <span class="toggle" style="width:22px;"></span>
-        <span>✂️</span>
-        <span class="pname">VAT number</span>
-        <span class="pvalue">FR98765432100</span>
-      </div>
-      <div class="panel-row">
-        <span class="toggle" style="width:22px;"></span>
-        <span>✂️</span>
-        <span class="pname">Company ID</span>
-        <span class="pvalue">98765432100015</span>
-      </div>
-      <div class="panel-row">
-        <span class="toggle">▶</span>
-        <span>📁</span>
-        <span class="pname">Brand colors</span>
-      </div>
-      <div class="panel-row">
-        <span class="toggle">▶</span>
-        <span>📁</span>
-        <span class="pname">Emails</span>
-      </div>
+
     </div>
   </div>
 

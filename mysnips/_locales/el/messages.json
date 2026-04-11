@@ -1,37 +1,116 @@
 {
-  "extName": { "message": "MySnips" },
-  "extDescription": { "message": "Προσωπικά αποσπάσματα οργανωμένα σε δέντρο — ιδιωτική χρήση" },
-  "searchPlaceholder": { "message": "Αναζήτηση…" },
-  "openOptions": { "message": "Διαχείριση αποσπασμάτων" },
-  "noSnippets": { "message": "Δεν υπάρχουν αποσπάσματα ακόμη." },
-  "openEditor": { "message": "Άνοιγμα επεξεργαστή →" },
-  "noResults": { "message": "Δεν βρέθηκαν αποτελέσματα." },
-  "copied": { "message": "Αντιγράφηκε!" },
-  "inserted": { "message": "Εισήχθη!" },
-  "optionsTitle": { "message": "MySnips — Επεξεργαστής" },
-  "tabVisual": { "message": "Δέντρο" },
-  "tabJson": { "message": "Ακατέργαστο JSON" },
-  "importBtn": { "message": "⬆ Εισαγωγή αρχείου" },
-  "exportBtn": { "message": "⬇ Εξαγωγή αρχείου" },
-  "jsonApply": { "message": "✓ Εφαρμογή" },
-  "jsonReset": { "message": "↺ Απόρριψη αλλαγών" },
-  "jsonHint": { "message": "Επεξεργαστείτε JSON απευθείας. Ctrl+S ή το κουμπί Εφαρμογή για αποθήκευση. Τα συντακτικά σφάλματα εμφανίζονται πριν από οποιαδήποτε αντικατάσταση." },
-  "visualHint": { "message": "Κάντε διπλό κλικ σε ένα όνομα ή τιμή για επεξεργασία. Enter για επιβεβαίωση, Shift+Enter για νέα γραμμή, Escape για ακύρωση." },
-  "shortcutLabel": { "message": "Συντόμευση πληκτρολογίου:" },
-  "shortcutNone": { "message": "Δεν έχει ρυθμιστεί συντόμευση" },
-  "shortcutConfigure": { "message": "Ρύθμιση" },
-  "savedStatus": { "message": "Αποθηκεύτηκε ✓" },
-  "addFolder": { "message": "＋ Φάκελος" },
-  "addSnippet": { "message": "＋ Απόσπασμα" },
-  "folderNamePrompt": { "message": "Όνομα φακέλου:" },
-  "snippetNamePrompt": { "message": "Όνομα αποσπάσματος:" },
-  "snippetValuePrompt": { "message": "Τιμή:" },
-  "deleteFolder": { "message": "Διαγραφή του φακέλου \"%s\" και όλου του περιεχομένου του;" },
-  "deleteSnippet": { "message": "Διαγραφή \"%s\";" },
-  "importReplace": { "message": "Πώς να εισαγάγω;\n\nΟΚ       → Αντικατάσταση όλων\nΑκύρωση → Συγχώνευση (προσθήκη)" },
-  "importError": { "message": "Σφάλμα εισαγωγής: " },
-  "moveUp": { "message": "Μετακίνηση επάνω" },
-  "moveDown": { "message": "Μετακίνηση κάτω" },
-  "delete": { "message": "Διαγραφή" },
-  "closePanel": { "message": "Κλείσιμο" }
+  "extName": {
+    "message": "MySnips — Text Expander"
+  },
+  "extDescription": {
+    "message": "Επεκτάτης κειμένου & διαχειριστής snippets — εισαγάγετε πρότυπα και έτοιμες απαντήσεις άμεσα. Alt+S."
+  },
+  "searchPlaceholder": {
+    "message": "Αναζήτηση…"
+  },
+  "openOptions": {
+    "message": "Διαχείριση αποσπασμάτων"
+  },
+  "noSnippets": {
+    "message": "Δεν υπάρχουν αποσπάσματα ακόμη."
+  },
+  "openEditor": {
+    "message": "Άνοιγμα επεξεργαστή →"
+  },
+  "noResults": {
+    "message": "Δεν βρέθηκαν αποτελέσματα."
+  },
+  "copied": {
+    "message": "Αντιγράφηκε!"
+  },
+  "inserted": {
+    "message": "Εισήχθη!"
+  },
+  "optionsTitle": {
+    "message": "MySnips — Επεξεργαστής"
+  },
+  "tabVisual": {
+    "message": "Δέντρο"
+  },
+  "tabJson": {
+    "message": "Ακατέργαστο JSON"
+  },
+  "importBtn": {
+    "message": "⬆ Εισαγωγή αρχείου"
+  },
+  "exportBtn": {
+    "message": "⬇ Εξαγωγή αρχείου"
+  },
+  "jsonApply": {
+    "message": "✓ Εφαρμογή"
+  },
+  "jsonReset": {
+    "message": "↺ Απόρριψη αλλαγών"
+  },
+  "jsonHint": {
+    "message": "Επεξεργαστείτε JSON απευθείας. Ctrl+S ή το κουμπί Εφαρμογή για αποθήκευση. Τα συντακτικά σφάλματα εμφανίζονται πριν από οποιαδήποτε αντικατάσταση."
+  },
+  "visualHint": {
+    "message": "Κάντε διπλό κλικ σε ένα όνομα ή τιμή για επεξεργασία. Enter για επιβεβαίωση, Shift+Enter για νέα γραμμή, Escape για ακύρωση."
+  },
+  "shortcutLabel": {
+    "message": "Συντόμευση πληκτρολογίου:"
+  },
+  "shortcutNone": {
+    "message": "Δεν έχει ρυθμιστεί συντόμευση"
+  },
+  "shortcutConfigure": {
+    "message": "Ρύθμιση"
+  },
+  "savedStatus": {
+    "message": "Αποθηκεύτηκε ✓"
+  },
+  "addFolder": {
+    "message": "＋ Φάκελος"
+  },
+  "addSnippet": {
+    "message": "＋ Απόσπασμα"
+  },
+  "folderNamePrompt": {
+    "message": "Όνομα φακέλου:"
+  },
+  "snippetNamePrompt": {
+    "message": "Όνομα αποσπάσματος:"
+  },
+  "snippetValuePrompt": {
+    "message": "Τιμή:"
+  },
+  "deleteFolder": {
+    "message": "Διαγραφή του φακέλου \"%s\" και όλου του περιεχομένου του;"
+  },
+  "deleteSnippet": {
+    "message": "Διαγραφή \"%s\";"
+  },
+  "importReplace": {
+    "message": "Πώς να εισαγάγω;\n\nΟΚ       → Αντικατάσταση όλων\nΑκύρωση → Συγχώνευση (προσθήκη)"
+  },
+  "importError": {
+    "message": "Σφάλμα εισαγωγής: "
+  },
+  "moveUp": {
+    "message": "Μετακίνηση επάνω"
+  },
+  "moveDown": {
+    "message": "Μετακίνηση κάτω"
+  },
+  "delete": {
+    "message": "Διαγραφή"
+  },
+  "closePanel": {
+    "message": "Κλείσιμο"
+  },
+  "footerSuggest": {
+    "message": "Πρότεινε λειτουργία"
+  },
+  "footerReview": {
+    "message": "Άφησε κριτική"
+  },
+  "footerMail": {
+    "message": "Στείλε email"
+  }
 }

@@ -1,37 +1,116 @@
 {
-  "extName": { "message": "MySnips" },
-  "extDescription": { "message": "Osobní snippety organizované ve stromě — soukromé použití" },
-  "searchPlaceholder": { "message": "Hledat…" },
-  "openOptions": { "message": "Spravovat snippety" },
-  "noSnippets": { "message": "Zatím žádné snippety." },
-  "openEditor": { "message": "Otevřít editor →" },
-  "noResults": { "message": "Žádné výsledky." },
-  "copied": { "message": "Zkopírováno!" },
-  "inserted": { "message": "Vloženo!" },
-  "optionsTitle": { "message": "MySnips — Editor" },
-  "tabVisual": { "message": "Strom" },
-  "tabJson": { "message": "Surový JSON" },
-  "importBtn": { "message": "⬆ Importovat soubor" },
-  "exportBtn": { "message": "⬇ Exportovat soubor" },
-  "jsonApply": { "message": "✓ Použít" },
-  "jsonReset": { "message": "↺ Zahodit změny" },
-  "jsonHint": { "message": "Upravte JSON přímo. Ctrl+S nebo tlačítko Použít pro uložení. Chyby syntaxe jsou zobrazeny před přepsáním." },
-  "visualHint": { "message": "Dvojklikem na název nebo hodnotu začněte editaci. Enter pro potvrzení, Shift+Enter pro nový řádek, Escape pro zrušení." },
-  "shortcutLabel": { "message": "Klávesová zkratka:" },
-  "shortcutNone": { "message": "Žádná zkratka není nakonfigurována" },
-  "shortcutConfigure": { "message": "Konfigurovat" },
-  "savedStatus": { "message": "Uloženo ✓" },
-  "addFolder": { "message": "＋ Složka" },
-  "addSnippet": { "message": "＋ Snippet" },
-  "folderNamePrompt": { "message": "Název složky:" },
-  "snippetNamePrompt": { "message": "Název snippetu:" },
-  "snippetValuePrompt": { "message": "Hodnota:" },
-  "deleteFolder": { "message": "Smazat složku \"%s\" a veškerý její obsah?" },
-  "deleteSnippet": { "message": "Smazat \"%s\"?" },
-  "importReplace": { "message": "Jak importovat?\n\nOK      → Nahradit vše\nZrušit  → Sloučit (přidat)" },
-  "importError": { "message": "Chyba importu: " },
-  "moveUp": { "message": "Přesunout nahoru" },
-  "moveDown": { "message": "Přesunout dolů" },
-  "delete": { "message": "Smazat" },
-  "closePanel": { "message": "Zavřít" }
+  "extName": {
+    "message": "MySnips — Text Expander"
+  },
+  "extDescription": {
+    "message": "Textový expander & správce snippetů — vkládejte šablony a připravené odpovědi okamžitě. Alt+S."
+  },
+  "searchPlaceholder": {
+    "message": "Hledat…"
+  },
+  "openOptions": {
+    "message": "Spravovat snippety"
+  },
+  "noSnippets": {
+    "message": "Zatím žádné snippety."
+  },
+  "openEditor": {
+    "message": "Otevřít editor →"
+  },
+  "noResults": {
+    "message": "Žádné výsledky."
+  },
+  "copied": {
+    "message": "Zkopírováno!"
+  },
+  "inserted": {
+    "message": "Vloženo!"
+  },
+  "optionsTitle": {
+    "message": "MySnips — Editor"
+  },
+  "tabVisual": {
+    "message": "Strom"
+  },
+  "tabJson": {
+    "message": "Surový JSON"
+  },
+  "importBtn": {
+    "message": "⬆ Importovat soubor"
+  },
+  "exportBtn": {
+    "message": "⬇ Exportovat soubor"
+  },
+  "jsonApply": {
+    "message": "✓ Použít"
+  },
+  "jsonReset": {
+    "message": "↺ Zahodit změny"
+  },
+  "jsonHint": {
+    "message": "Upravte JSON přímo. Ctrl+S nebo tlačítko Použít pro uložení. Chyby syntaxe jsou zobrazeny před přepsáním."
+  },
+  "visualHint": {
+    "message": "Dvojklikem na název nebo hodnotu začněte editaci. Enter pro potvrzení, Shift+Enter pro nový řádek, Escape pro zrušení."
+  },
+  "shortcutLabel": {
+    "message": "Klávesová zkratka:"
+  },
+  "shortcutNone": {
+    "message": "Žádná zkratka není nakonfigurována"
+  },
+  "shortcutConfigure": {
+    "message": "Konfigurovat"
+  },
+  "savedStatus": {
+    "message": "Uloženo ✓"
+  },
+  "addFolder": {
+    "message": "＋ Složka"
+  },
+  "addSnippet": {
+    "message": "＋ Snippet"
+  },
+  "folderNamePrompt": {
+    "message": "Název složky:"
+  },
+  "snippetNamePrompt": {
+    "message": "Název snippetu:"
+  },
+  "snippetValuePrompt": {
+    "message": "Hodnota:"
+  },
+  "deleteFolder": {
+    "message": "Smazat složku \"%s\" a veškerý její obsah?"
+  },
+  "deleteSnippet": {
+    "message": "Smazat \"%s\"?"
+  },
+  "importReplace": {
+    "message": "Jak importovat?\n\nOK      → Nahradit vše\nZrušit  → Sloučit (přidat)"
+  },
+  "importError": {
+    "message": "Chyba importu: "
+  },
+  "moveUp": {
+    "message": "Přesunout nahoru"
+  },
+  "moveDown": {
+    "message": "Přesunout dolů"
+  },
+  "delete": {
+    "message": "Smazat"
+  },
+  "closePanel": {
+    "message": "Zavřít"
+  },
+  "footerSuggest": {
+    "message": "Navrhnout funkci"
+  },
+  "footerReview": {
+    "message": "Napsat recenzi"
+  },
+  "footerMail": {
+    "message": "Poslat e-mail"
+  }
 }

@@ -1,37 +1,116 @@
 {
-  "extName": { "message": "MySnips" },
-  "extDescription": { "message": "Osobiste snippety zorganizowane w drzewo — użytek prywatny" },
-  "searchPlaceholder": { "message": "Szukaj…" },
-  "openOptions": { "message": "Zarządzaj snippetami" },
-  "noSnippets": { "message": "Brak snippetów." },
-  "openEditor": { "message": "Otwórz edytor →" },
-  "noResults": { "message": "Brak wyników." },
-  "copied": { "message": "Skopiowano!" },
-  "inserted": { "message": "Wstawiono!" },
-  "optionsTitle": { "message": "MySnips — Edytor" },
-  "tabVisual": { "message": "Drzewo" },
-  "tabJson": { "message": "Surowy JSON" },
-  "importBtn": { "message": "⬆ Importuj plik" },
-  "exportBtn": { "message": "⬇ Eksportuj plik" },
-  "jsonApply": { "message": "✓ Zastosuj" },
-  "jsonReset": { "message": "↺ Odrzuć zmiany" },
-  "jsonHint": { "message": "Edytuj JSON bezpośrednio. Ctrl+S lub przycisk Zastosuj, aby zapisać. Błędy składni są wyświetlane przed nadpisaniem." },
-  "visualHint": { "message": "Kliknij dwukrotnie nazwę lub wartość, aby edytować. Enter aby potwierdzić, Shift+Enter dla nowej linii, Escape aby anulować." },
-  "shortcutLabel": { "message": "Skrót klawiszowy:" },
-  "shortcutNone": { "message": "Brak skonfigurowanego skrótu" },
-  "shortcutConfigure": { "message": "Konfiguruj" },
-  "savedStatus": { "message": "Zapisano ✓" },
-  "addFolder": { "message": "＋ Folder" },
-  "addSnippet": { "message": "＋ Snippet" },
-  "folderNamePrompt": { "message": "Nazwa folderu:" },
-  "snippetNamePrompt": { "message": "Nazwa snippetu:" },
-  "snippetValuePrompt": { "message": "Wartość:" },
-  "deleteFolder": { "message": "Usunąć folder \"%s\" i całą jego zawartość?" },
-  "deleteSnippet": { "message": "Usunąć \"%s\"?" },
-  "importReplace": { "message": "Jak importować?\n\nOK      → Zastąp wszystko\nAnuluj  → Scal (dołącz)" },
-  "importError": { "message": "Błąd importu: " },
-  "moveUp": { "message": "Przesuń w górę" },
-  "moveDown": { "message": "Przesuń w dół" },
-  "delete": { "message": "Usuń" },
-  "closePanel": { "message": "Zamknij" }
+  "extName": {
+    "message": "MySnips — Text Expander"
+  },
+  "extDescription": {
+    "message": "Ekspander tekstu & menedżer snippetów — wstawiaj szablony i gotowe odpowiedzi błyskawicznie. Alt+S."
+  },
+  "searchPlaceholder": {
+    "message": "Szukaj…"
+  },
+  "openOptions": {
+    "message": "Zarządzaj snippetami"
+  },
+  "noSnippets": {
+    "message": "Brak snippetów."
+  },
+  "openEditor": {
+    "message": "Otwórz edytor →"
+  },
+  "noResults": {
+    "message": "Brak wyników."
+  },
+  "copied": {
+    "message": "Skopiowano!"
+  },
+  "inserted": {
+    "message": "Wstawiono!"
+  },
+  "optionsTitle": {
+    "message": "MySnips — Edytor"
+  },
+  "tabVisual": {
+    "message": "Drzewo"
+  },
+  "tabJson": {
+    "message": "Surowy JSON"
+  },
+  "importBtn": {
+    "message": "⬆ Importuj plik"
+  },
+  "exportBtn": {
+    "message": "⬇ Eksportuj plik"
+  },
+  "jsonApply": {
+    "message": "✓ Zastosuj"
+  },
+  "jsonReset": {
+    "message": "↺ Odrzuć zmiany"
+  },
+  "jsonHint": {
+    "message": "Edytuj JSON bezpośrednio. Ctrl+S lub przycisk Zastosuj, aby zapisać. Błędy składni są wyświetlane przed nadpisaniem."
+  },
+  "visualHint": {
+    "message": "Kliknij dwukrotnie nazwę lub wartość, aby edytować. Enter aby potwierdzić, Shift+Enter dla nowej linii, Escape aby anulować."
+  },
+  "shortcutLabel": {
+    "message": "Skrót klawiszowy:"
+  },
+  "shortcutNone": {
+    "message": "Brak skonfigurowanego skrótu"
+  },
+  "shortcutConfigure": {
+    "message": "Konfiguruj"
+  },
+  "savedStatus": {
+    "message": "Zapisano ✓"
+  },
+  "addFolder": {
+    "message": "＋ Folder"
+  },
+  "addSnippet": {
+    "message": "＋ Snippet"
+  },
+  "folderNamePrompt": {
+    "message": "Nazwa folderu:"
+  },
+  "snippetNamePrompt": {
+    "message": "Nazwa snippetu:"
+  },
+  "snippetValuePrompt": {
+    "message": "Wartość:"
+  },
+  "deleteFolder": {
+    "message": "Usunąć folder \"%s\" i całą jego zawartość?"
+  },
+  "deleteSnippet": {
+    "message": "Usunąć \"%s\"?"
+  },
+  "importReplace": {
+    "message": "Jak importować?\n\nOK      → Zastąp wszystko\nAnuluj  → Scal (dołącz)"
+  },
+  "importError": {
+    "message": "Błąd importu: "
+  },
+  "moveUp": {
+    "message": "Przesuń w górę"
+  },
+  "moveDown": {
+    "message": "Przesuń w dół"
+  },
+  "delete": {
+    "message": "Usuń"
+  },
+  "closePanel": {
+    "message": "Zamknij"
+  },
+  "footerSuggest": {
+    "message": "Zaproponuj funkcję"
+  },
+  "footerReview": {
+    "message": "Zostaw opinię"
+  },
+  "footerMail": {
+    "message": "Wyślij e-mail"
+  }
 }

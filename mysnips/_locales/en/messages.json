@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "MySnips"
+    "message": "MySnips — Text Expander"
   },
   "extDescription": {
-    "message": "Instantly paste your most-used snippets into any text field — organized in folders, accessible with Alt+S."
+    "message": "Text expander & snippet manager — instantly insert templates, canned responses and shortcuts into any field. Press Alt+S."
   },
   "searchPlaceholder": {
     "message": "Search…"
@@ -103,5 +103,14 @@
   },
   "closePanel": {
     "message": "Close"
+  },
+  "footerSuggest": {
+    "message": "Suggest a feature"
+  },
+  "footerReview": {
+    "message": "Leave a review"
+  },
+  "footerMail": {
+    "message": "Send us an email"
   }
 }

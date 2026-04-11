@@ -1,37 +1,116 @@
 {
-  "extName": { "message": "MySnips" },
-  "extDescription": { "message": "Лични фрагменти, организирани в дърво — лична употреба" },
-  "searchPlaceholder": { "message": "Търсене…" },
-  "openOptions": { "message": "Управление на фрагменти" },
-  "noSnippets": { "message": "Все още няма фрагменти." },
-  "openEditor": { "message": "Отвори редактора →" },
-  "noResults": { "message": "Няма резултати." },
-  "copied": { "message": "Копирано!" },
-  "inserted": { "message": "Вмъкнато!" },
-  "optionsTitle": { "message": "MySnips — Редактор" },
-  "tabVisual": { "message": "Дърво" },
-  "tabJson": { "message": "Необработен JSON" },
-  "importBtn": { "message": "⬆ Импортирай файл" },
-  "exportBtn": { "message": "⬇ Експортирай файл" },
-  "jsonApply": { "message": "✓ Приложи" },
-  "jsonReset": { "message": "↺ Откажи промените" },
-  "jsonHint": { "message": "Редактирайте JSON директно. Ctrl+S или бутона Приложи за запазване. Синтактичните грешки се показват преди презаписването." },
-  "visualHint": { "message": "Щракнете двукратно върху име или стойност за редактиране. Enter за потвърждение, Shift+Enter за нов ред, Escape за отказ." },
-  "shortcutLabel": { "message": "Клавишна комбинация:" },
-  "shortcutNone": { "message": "Няма конфигурирана комбинация" },
-  "shortcutConfigure": { "message": "Конфигурирай" },
-  "savedStatus": { "message": "Запазено ✓" },
-  "addFolder": { "message": "＋ Папка" },
-  "addSnippet": { "message": "＋ Фрагмент" },
-  "folderNamePrompt": { "message": "Име на папката:" },
-  "snippetNamePrompt": { "message": "Име на фрагмента:" },
-  "snippetValuePrompt": { "message": "Стойност:" },
-  "deleteFolder": { "message": "Изтрий папката \"%s\" и цялото й съдържание?" },
-  "deleteSnippet": { "message": "Изтрий \"%s\"?" },
-  "importReplace": { "message": "Как да импортирам?\n\nOK       → Замени всичко\nОтказ   → Обедини (добави)" },
-  "importError": { "message": "Грешка при импортиране: " },
-  "moveUp": { "message": "Премести нагоре" },
-  "moveDown": { "message": "Премести надолу" },
-  "delete": { "message": "Изтрий" },
-  "closePanel": { "message": "Затвори" }
+  "extName": {
+    "message": "MySnips — Text Expander"
+  },
+  "extDescription": {
+    "message": "Разширител на текст & мениджър на фрагменти — вмъквайте шаблони и готови отговори мигновено. Alt+S."
+  },
+  "searchPlaceholder": {
+    "message": "Търсене…"
+  },
+  "openOptions": {
+    "message": "Управление на фрагменти"
+  },
+  "noSnippets": {
+    "message": "Все още няма фрагменти."
+  },
+  "openEditor": {
+    "message": "Отвори редактора →"
+  },
+  "noResults": {
+    "message": "Няма резултати."
+  },
+  "copied": {
+    "message": "Копирано!"
+  },
+  "inserted": {
+    "message": "Вмъкнато!"
+  },
+  "optionsTitle": {
+    "message": "MySnips — Редактор"
+  },
+  "tabVisual": {
+    "message": "Дърво"
+  },
+  "tabJson": {
+    "message": "Необработен JSON"
+  },
+  "importBtn": {
+    "message": "⬆ Импортирай файл"
+  },
+  "exportBtn": {
+    "message": "⬇ Експортирай файл"
+  },
+  "jsonApply": {
+    "message": "✓ Приложи"
+  },
+  "jsonReset": {
+    "message": "↺ Откажи промените"
+  },
+  "jsonHint": {
+    "message": "Редактирайте JSON директно. Ctrl+S или бутона Приложи за запазване. Синтактичните грешки се показват преди презаписването."
+  },
+  "visualHint": {
+    "message": "Щракнете двукратно върху име или стойност за редактиране. Enter за потвърждение, Shift+Enter за нов ред, Escape за отказ."
+  },
+  "shortcutLabel": {
+    "message": "Клавишна комбинация:"
+  },
+  "shortcutNone": {
+    "message": "Няма конфигурирана комбинация"
+  },
+  "shortcutConfigure": {
+    "message": "Конфигурирай"
+  },
+  "savedStatus": {
+    "message": "Запазено ✓"
+  },
+  "addFolder": {
+    "message": "＋ Папка"
+  },
+  "addSnippet": {
+    "message": "＋ Фрагмент"
+  },
+  "folderNamePrompt": {
+    "message": "Име на папката:"
+  },
+  "snippetNamePrompt": {
+    "message": "Име на фрагмента:"
+  },
+  "snippetValuePrompt": {
+    "message": "Стойност:"
+  },
+  "deleteFolder": {
+    "message": "Изтрий папката \"%s\" и цялото й съдържание?"
+  },
+  "deleteSnippet": {
+    "message": "Изтрий \"%s\"?"
+  },
+  "importReplace": {
+    "message": "Как да импортирам?\n\nOK       → Замени всичко\nОтказ   → Обедини (добави)"
+  },
+  "importError": {
+    "message": "Грешка при импортиране: "
+  },
+  "moveUp": {
+    "message": "Премести нагоре"
+  },
+  "moveDown": {
+    "message": "Премести надолу"
+  },
+  "delete": {
+    "message": "Изтрий"
+  },
+  "closePanel": {
+    "message": "Затвори"
+  },
+  "footerSuggest": {
+    "message": "Предложи функция"
+  },
+  "footerReview": {
+    "message": "Напиши отзив"
+  },
+  "footerMail": {
+    "message": "Изпрати имейл"
+  }
 }

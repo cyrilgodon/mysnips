@@ -1,37 +1,116 @@
 {
-  "extName": { "message": "MySnips" },
-  "extDescription": { "message": "Ağaç yapısında düzenlenmiş kişisel snippet'ler — özel kullanım" },
-  "searchPlaceholder": { "message": "Ara…" },
-  "openOptions": { "message": "Snippet'leri yönet" },
-  "noSnippets": { "message": "Henüz snippet yok." },
-  "openEditor": { "message": "Editörü aç →" },
-  "noResults": { "message": "Sonuç bulunamadı." },
-  "copied": { "message": "Kopyalandı!" },
-  "inserted": { "message": "Eklendi!" },
-  "optionsTitle": { "message": "MySnips — Editör" },
-  "tabVisual": { "message": "Ağaç" },
-  "tabJson": { "message": "Ham JSON" },
-  "importBtn": { "message": "⬆ Dosya içe aktar" },
-  "exportBtn": { "message": "⬇ Dosya dışa aktar" },
-  "jsonApply": { "message": "✓ Uygula" },
-  "jsonReset": { "message": "↺ Değişiklikleri at" },
-  "jsonHint": { "message": "JSON'u doğrudan düzenleyin. Kaydetmek için Ctrl+S veya Uygula düğmesine basın. Söz dizimi hataları üzerine yazılmadan önce gösterilir." },
-  "visualHint": { "message": "Düzenlemek için bir ad veya değere çift tıklayın. Onaylamak için Enter, yeni satır için Shift+Enter, iptal etmek için Escape." },
-  "shortcutLabel": { "message": "Klavye kısayolu:" },
-  "shortcutNone": { "message": "Kısayol yapılandırılmamış" },
-  "shortcutConfigure": { "message": "Yapılandır" },
-  "savedStatus": { "message": "Kaydedildi ✓" },
-  "addFolder": { "message": "＋ Klasör" },
-  "addSnippet": { "message": "＋ Snippet" },
-  "folderNamePrompt": { "message": "Klasör adı:" },
-  "snippetNamePrompt": { "message": "Snippet adı:" },
-  "snippetValuePrompt": { "message": "Değer:" },
-  "deleteFolder": { "message": "\"%s\" klasörü ve tüm içeriği silinsin mi?" },
-  "deleteSnippet": { "message": "\"%s\" silinsin mi?" },
-  "importReplace": { "message": "Nasıl içe aktarılsın?\n\nTamam    → Tümünü değiştir\nİptal    → Birleştir (ekle)" },
-  "importError": { "message": "İçe aktarma hatası: " },
-  "moveUp": { "message": "Yukarı taşı" },
-  "moveDown": { "message": "Aşağı taşı" },
-  "delete": { "message": "Sil" },
-  "closePanel": { "message": "Kapat" }
+  "extName": {
+    "message": "MySnips — Text Expander"
+  },
+  "extDescription": {
+    "message": "Metin genişletici & snippet yöneticisi — şablonları ve hazır yanıtları anında yapıştırın. Alt+S."
+  },
+  "searchPlaceholder": {
+    "message": "Ara…"
+  },
+  "openOptions": {
+    "message": "Snippet'leri yönet"
+  },
+  "noSnippets": {
+    "message": "Henüz snippet yok."
+  },
+  "openEditor": {
+    "message": "Editörü aç →"
+  },
+  "noResults": {
+    "message": "Sonuç bulunamadı."
+  },
+  "copied": {
+    "message": "Kopyalandı!"
+  },
+  "inserted": {
+    "message": "Eklendi!"
+  },
+  "optionsTitle": {
+    "message": "MySnips — Editör"
+  },
+  "tabVisual": {
+    "message": "Ağaç"
+  },
+  "tabJson": {
+    "message": "Ham JSON"
+  },
+  "importBtn": {
+    "message": "⬆ Dosya içe aktar"
+  },
+  "exportBtn": {
+    "message": "⬇ Dosya dışa aktar"
+  },
+  "jsonApply": {
+    "message": "✓ Uygula"
+  },
+  "jsonReset": {
+    "message": "↺ Değişiklikleri at"
+  },
+  "jsonHint": {
+    "message": "JSON'u doğrudan düzenleyin. Kaydetmek için Ctrl+S veya Uygula düğmesine basın. Söz dizimi hataları üzerine yazılmadan önce gösterilir."
+  },
+  "visualHint": {
+    "message": "Düzenlemek için bir ad veya değere çift tıklayın. Onaylamak için Enter, yeni satır için Shift+Enter, iptal etmek için Escape."
+  },
+  "shortcutLabel": {
+    "message": "Klavye kısayolu:"
+  },
+  "shortcutNone": {
+    "message": "Kısayol yapılandırılmamış"
+  },
+  "shortcutConfigure": {
+    "message": "Yapılandır"
+  },
+  "savedStatus": {
+    "message": "Kaydedildi ✓"
+  },
+  "addFolder": {
+    "message": "＋ Klasör"
+  },
+  "addSnippet": {
+    "message": "＋ Snippet"
+  },
+  "folderNamePrompt": {
+    "message": "Klasör adı:"
+  },
+  "snippetNamePrompt": {
+    "message": "Snippet adı:"
+  },
+  "snippetValuePrompt": {
+    "message": "Değer:"
+  },
+  "deleteFolder": {
+    "message": "\"%s\" klasörü ve tüm içeriği silinsin mi?"
+  },
+  "deleteSnippet": {
+    "message": "\"%s\" silinsin mi?"
+  },
+  "importReplace": {
+    "message": "Nasıl içe aktarılsın?\n\nTamam    → Tümünü değiştir\nİptal    → Birleştir (ekle)"
+  },
+  "importError": {
+    "message": "İçe aktarma hatası: "
+  },
+  "moveUp": {
+    "message": "Yukarı taşı"
+  },
+  "moveDown": {
+    "message": "Aşağı taşı"
+  },
+  "delete": {
+    "message": "Sil"
+  },
+  "closePanel": {
+    "message": "Kapat"
+  },
+  "footerSuggest": {
+    "message": "Özellik öner"
+  },
+  "footerReview": {
+    "message": "Yorum bırak"
+  },
+  "footerMail": {
+    "message": "E-posta gönder"
+  }
 }

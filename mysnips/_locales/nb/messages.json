@@ -1,37 +1,116 @@
 {
-  "extName": { "message": "MySnips" },
-  "extDescription": { "message": "Personlige snippets organisert i et tre — privat bruk" },
-  "searchPlaceholder": { "message": "Søk…" },
-  "openOptions": { "message": "Administrer snippets" },
-  "noSnippets": { "message": "Ingen snippets ennå." },
-  "openEditor": { "message": "Åpne editor →" },
-  "noResults": { "message": "Ingen resultater." },
-  "copied": { "message": "Kopiert!" },
-  "inserted": { "message": "Satt inn!" },
-  "optionsTitle": { "message": "MySnips — Editor" },
-  "tabVisual": { "message": "Tre" },
-  "tabJson": { "message": "Rå JSON" },
-  "importBtn": { "message": "⬆ Importer fil" },
-  "exportBtn": { "message": "⬇ Eksporter fil" },
-  "jsonApply": { "message": "✓ Bruk" },
-  "jsonReset": { "message": "↺ Forkast endringer" },
-  "jsonHint": { "message": "Rediger JSON direkte. Ctrl+S eller Bruk-knappen for å lagre. Syntaksfeil vises før noe overskrives." },
-  "visualHint": { "message": "Dobbeltklikk på et navn eller en verdi for å redigere. Enter for å bekrefte, Shift+Enter for ny linje, Escape for å avbryte." },
-  "shortcutLabel": { "message": "Tastatursnarveier:" },
-  "shortcutNone": { "message": "Ingen snarvei konfigurert" },
-  "shortcutConfigure": { "message": "Konfigurer" },
-  "savedStatus": { "message": "Lagret ✓" },
-  "addFolder": { "message": "＋ Mappe" },
-  "addSnippet": { "message": "＋ Snippet" },
-  "folderNamePrompt": { "message": "Mappenavn:" },
-  "snippetNamePrompt": { "message": "Snippetnavn:" },
-  "snippetValuePrompt": { "message": "Verdi:" },
-  "deleteFolder": { "message": "Slette mappen \"%s\" og alt innholdet?" },
-  "deleteSnippet": { "message": "Slette \"%s\"?" },
-  "importReplace": { "message": "Hvordan importere?\n\nOK      → Erstatt alt\nAvbryt  → Slå sammen (legg til)" },
-  "importError": { "message": "Importfeil: " },
-  "moveUp": { "message": "Flytt opp" },
-  "moveDown": { "message": "Flytt ned" },
-  "delete": { "message": "Slett" },
-  "closePanel": { "message": "Lukk" }
+  "extName": {
+    "message": "MySnips — Text Expander"
+  },
+  "extDescription": {
+    "message": "Tekst-ekspander & snippet-manager — lim inn maler og standardsvar øyeblikkelig. Trykk Alt+S."
+  },
+  "searchPlaceholder": {
+    "message": "Søk…"
+  },
+  "openOptions": {
+    "message": "Administrer snippets"
+  },
+  "noSnippets": {
+    "message": "Ingen snippets ennå."
+  },
+  "openEditor": {
+    "message": "Åpne editor →"
+  },
+  "noResults": {
+    "message": "Ingen resultater."
+  },
+  "copied": {
+    "message": "Kopiert!"
+  },
+  "inserted": {
+    "message": "Satt inn!"
+  },
+  "optionsTitle": {
+    "message": "MySnips — Editor"
+  },
+  "tabVisual": {
+    "message": "Tre"
+  },
+  "tabJson": {
+    "message": "Rå JSON"
+  },
+  "importBtn": {
+    "message": "⬆ Importer fil"
+  },
+  "exportBtn": {
+    "message": "⬇ Eksporter fil"
+  },
+  "jsonApply": {
+    "message": "✓ Bruk"
+  },
+  "jsonReset": {
+    "message": "↺ Forkast endringer"
+  },
+  "jsonHint": {
+    "message": "Rediger JSON direkte. Ctrl+S eller Bruk-knappen for å lagre. Syntaksfeil vises før noe overskrives."
+  },
+  "visualHint": {
+    "message": "Dobbeltklikk på et navn eller en verdi for å redigere. Enter for å bekrefte, Shift+Enter for ny linje, Escape for å avbryte."
+  },
+  "shortcutLabel": {
+    "message": "Tastatursnarveier:"
+  },
+  "shortcutNone": {
+    "message": "Ingen snarvei konfigurert"
+  },
+  "shortcutConfigure": {
+    "message": "Konfigurer"
+  },
+  "savedStatus": {
+    "message": "Lagret ✓"
+  },
+  "addFolder": {
+    "message": "＋ Mappe"
+  },
+  "addSnippet": {
+    "message": "＋ Snippet"
+  },
+  "folderNamePrompt": {
+    "message": "Mappenavn:"
+  },
+  "snippetNamePrompt": {
+    "message": "Snippetnavn:"
+  },
+  "snippetValuePrompt": {
+    "message": "Verdi:"
+  },
+  "deleteFolder": {
+    "message": "Slette mappen \"%s\" og alt innholdet?"
+  },
+  "deleteSnippet": {
+    "message": "Slette \"%s\"?"
+  },
+  "importReplace": {
+    "message": "Hvordan importere?\n\nOK      → Erstatt alt\nAvbryt  → Slå sammen (legg til)"
+  },
+  "importError": {
+    "message": "Importfeil: "
+  },
+  "moveUp": {
+    "message": "Flytt opp"
+  },
+  "moveDown": {
+    "message": "Flytt ned"
+  },
+  "delete": {
+    "message": "Slett"
+  },
+  "closePanel": {
+    "message": "Lukk"
+  },
+  "footerSuggest": {
+    "message": "Foreslå en funksjon"
+  },
+  "footerReview": {
+    "message": "Skriv en anmeldelse"
+  },
+  "footerMail": {
+    "message": "Send en e-post"
+  }
 }

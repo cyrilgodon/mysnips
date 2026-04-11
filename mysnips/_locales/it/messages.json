@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "MySnips"
+    "message": "MySnips — Text Expander"
   },
   "extDescription": {
-    "message": "Snippet personali organizzati ad albero — uso privato"
+    "message": "Text expander & gestore snippet — inserisci modelli e risposte predefinite all'istante. Premi Alt+S."
   },
   "searchPlaceholder": {
     "message": "Cerca…"
@@ -103,5 +103,14 @@
   },
   "closePanel": {
     "message": "Chiudi"
+  },
+  "footerSuggest": {
+    "message": "Suggerisci una funzione"
+  },
+  "footerReview": {
+    "message": "Lascia una recensione"
+  },
+  "footerMail": {
+    "message": "Invia un'email"
   }
 }

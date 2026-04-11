@@ -1,37 +1,116 @@
 {
-  "extName": { "message": "MySnips" },
-  "extDescription": { "message": "Snippets pessoais organizados em árvore — uso privado" },
-  "searchPlaceholder": { "message": "Pesquisar…" },
-  "openOptions": { "message": "Gerir snippets" },
-  "noSnippets": { "message": "Ainda não há snippets." },
-  "openEditor": { "message": "Abrir editor →" },
-  "noResults": { "message": "Sem resultados." },
-  "copied": { "message": "Copiado!" },
-  "inserted": { "message": "Inserido!" },
-  "optionsTitle": { "message": "MySnips — Editor" },
-  "tabVisual": { "message": "Árvore" },
-  "tabJson": { "message": "JSON bruto" },
-  "importBtn": { "message": "⬆ Importar ficheiro" },
-  "exportBtn": { "message": "⬇ Exportar ficheiro" },
-  "jsonApply": { "message": "✓ Aplicar" },
-  "jsonReset": { "message": "↺ Descartar alterações" },
-  "jsonHint": { "message": "Editar JSON diretamente. Ctrl+S ou o botão Aplicar para guardar. Os erros de sintaxe são mostrados antes de qualquer substituição." },
-  "visualHint": { "message": "Faça duplo clique num nome ou valor para editar. Enter para confirmar, Shift+Enter para nova linha, Escape para cancelar." },
-  "shortcutLabel": { "message": "Atalho de teclado:" },
-  "shortcutNone": { "message": "Nenhum atalho configurado" },
-  "shortcutConfigure": { "message": "Configurar" },
-  "savedStatus": { "message": "Guardado ✓" },
-  "addFolder": { "message": "＋ Pasta" },
-  "addSnippet": { "message": "＋ Snippet" },
-  "folderNamePrompt": { "message": "Nome da pasta:" },
-  "snippetNamePrompt": { "message": "Nome do snippet:" },
-  "snippetValuePrompt": { "message": "Valor:" },
-  "deleteFolder": { "message": "Eliminar a pasta \"%s\" e todo o seu conteúdo?" },
-  "deleteSnippet": { "message": "Eliminar \"%s\"?" },
-  "importReplace": { "message": "Como importar?\n\nOK       → Substituir tudo\nCancelar → Mesclar (acrescentar)" },
-  "importError": { "message": "Erro de importação: " },
-  "moveUp": { "message": "Mover para cima" },
-  "moveDown": { "message": "Mover para baixo" },
-  "delete": { "message": "Eliminar" },
-  "closePanel": { "message": "Fechar" }
+  "extName": {
+    "message": "MySnips — Text Expander"
+  },
+  "extDescription": {
+    "message": "Expansor de texto & gestor de snippets — insira modelos e respostas rápidas instantaneamente. Prima Alt+S."
+  },
+  "searchPlaceholder": {
+    "message": "Pesquisar…"
+  },
+  "openOptions": {
+    "message": "Gerir snippets"
+  },
+  "noSnippets": {
+    "message": "Ainda não há snippets."
+  },
+  "openEditor": {
+    "message": "Abrir editor →"
+  },
+  "noResults": {
+    "message": "Sem resultados."
+  },
+  "copied": {
+    "message": "Copiado!"
+  },
+  "inserted": {
+    "message": "Inserido!"
+  },
+  "optionsTitle": {
+    "message": "MySnips — Editor"
+  },
+  "tabVisual": {
+    "message": "Árvore"
+  },
+  "tabJson": {
+    "message": "JSON bruto"
+  },
+  "importBtn": {
+    "message": "⬆ Importar ficheiro"
+  },
+  "exportBtn": {
+    "message": "⬇ Exportar ficheiro"
+  },
+  "jsonApply": {
+    "message": "✓ Aplicar"
+  },
+  "jsonReset": {
+    "message": "↺ Descartar alterações"
+  },
+  "jsonHint": {
+    "message": "Editar JSON diretamente. Ctrl+S ou o botão Aplicar para guardar. Os erros de sintaxe são mostrados antes de qualquer substituição."
+  },
+  "visualHint": {
+    "message": "Faça duplo clique num nome ou valor para editar. Enter para confirmar, Shift+Enter para nova linha, Escape para cancelar."
+  },
+  "shortcutLabel": {
+    "message": "Atalho de teclado:"
+  },
+  "shortcutNone": {
+    "message": "Nenhum atalho configurado"
+  },
+  "shortcutConfigure": {
+    "message": "Configurar"
+  },
+  "savedStatus": {
+    "message": "Guardado ✓"
+  },
+  "addFolder": {
+    "message": "＋ Pasta"
+  },
+  "addSnippet": {
+    "message": "＋ Snippet"
+  },
+  "folderNamePrompt": {
+    "message": "Nome da pasta:"
+  },
+  "snippetNamePrompt": {
+    "message": "Nome do snippet:"
+  },
+  "snippetValuePrompt": {
+    "message": "Valor:"
+  },
+  "deleteFolder": {
+    "message": "Eliminar a pasta \"%s\" e todo o seu conteúdo?"
+  },
+  "deleteSnippet": {
+    "message": "Eliminar \"%s\"?"
+  },
+  "importReplace": {
+    "message": "Como importar?\n\nOK       → Substituir tudo\nCancelar → Mesclar (acrescentar)"
+  },
+  "importError": {
+    "message": "Erro de importação: "
+  },
+  "moveUp": {
+    "message": "Mover para cima"
+  },
+  "moveDown": {
+    "message": "Mover para baixo"
+  },
+  "delete": {
+    "message": "Eliminar"
+  },
+  "closePanel": {
+    "message": "Fechar"
+  },
+  "footerSuggest": {
+    "message": "Sugerir uma funcionalidade"
+  },
+  "footerReview": {
+    "message": "Deixar uma avaliação"
+  },
+  "footerMail": {
+    "message": "Enviar um e-mail"
+  }
 }

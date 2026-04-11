@@ -1,37 +1,116 @@
 {
-  "extName": { "message": "MySnips" },
-  "extDescription": { "message": "Fragmente personale organizate în arbore — uz privat" },
-  "searchPlaceholder": { "message": "Caută…" },
-  "openOptions": { "message": "Gestionează fragmente" },
-  "noSnippets": { "message": "Niciun fragment încă." },
-  "openEditor": { "message": "Deschide editorul →" },
-  "noResults": { "message": "Niciun rezultat." },
-  "copied": { "message": "Copiat!" },
-  "inserted": { "message": "Inserat!" },
-  "optionsTitle": { "message": "MySnips — Editor" },
-  "tabVisual": { "message": "Arbore" },
-  "tabJson": { "message": "JSON brut" },
-  "importBtn": { "message": "⬆ Importă fișier" },
-  "exportBtn": { "message": "⬇ Exportă fișier" },
-  "jsonApply": { "message": "✓ Aplică" },
-  "jsonReset": { "message": "↺ Renunță la modificări" },
-  "jsonHint": { "message": "Editați JSON direct. Ctrl+S sau butonul Aplică pentru a salva. Erorile de sintaxă sunt afișate înainte de a suprascrie ceva." },
-  "visualHint": { "message": "Faceți dublu clic pe un nume sau valoare pentru a edita. Enter pentru confirmare, Shift+Enter pentru o linie nouă, Escape pentru anulare." },
-  "shortcutLabel": { "message": "Scurtătură tastatură:" },
-  "shortcutNone": { "message": "Nicio scurtătură configurată" },
-  "shortcutConfigure": { "message": "Configurează" },
-  "savedStatus": { "message": "Salvat ✓" },
-  "addFolder": { "message": "＋ Dosar" },
-  "addSnippet": { "message": "＋ Fragment" },
-  "folderNamePrompt": { "message": "Numele dosarului:" },
-  "snippetNamePrompt": { "message": "Numele fragmentului:" },
-  "snippetValuePrompt": { "message": "Valoare:" },
-  "deleteFolder": { "message": "Ștergeți dosarul \"%s\" și tot conținutul său?" },
-  "deleteSnippet": { "message": "Ștergeți \"%s\"?" },
-  "importReplace": { "message": "Cum se importă?\n\nOK      → Înlocuiește tot\nAnulare → Îmbinare (adăugare)" },
-  "importError": { "message": "Eroare la import: " },
-  "moveUp": { "message": "Mută în sus" },
-  "moveDown": { "message": "Mută în jos" },
-  "delete": { "message": "Șterge" },
-  "closePanel": { "message": "Închide" }
+  "extName": {
+    "message": "MySnips — Text Expander"
+  },
+  "extDescription": {
+    "message": "Expander de text & manager de snippets — inserați șabloane și răspunsuri rapide instant. Alt+S."
+  },
+  "searchPlaceholder": {
+    "message": "Caută…"
+  },
+  "openOptions": {
+    "message": "Gestionează fragmente"
+  },
+  "noSnippets": {
+    "message": "Niciun fragment încă."
+  },
+  "openEditor": {
+    "message": "Deschide editorul →"
+  },
+  "noResults": {
+    "message": "Niciun rezultat."
+  },
+  "copied": {
+    "message": "Copiat!"
+  },
+  "inserted": {
+    "message": "Inserat!"
+  },
+  "optionsTitle": {
+    "message": "MySnips — Editor"
+  },
+  "tabVisual": {
+    "message": "Arbore"
+  },
+  "tabJson": {
+    "message": "JSON brut"
+  },
+  "importBtn": {
+    "message": "⬆ Importă fișier"
+  },
+  "exportBtn": {
+    "message": "⬇ Exportă fișier"
+  },
+  "jsonApply": {
+    "message": "✓ Aplică"
+  },
+  "jsonReset": {
+    "message": "↺ Renunță la modificări"
+  },
+  "jsonHint": {
+    "message": "Editați JSON direct. Ctrl+S sau butonul Aplică pentru a salva. Erorile de sintaxă sunt afișate înainte de a suprascrie ceva."
+  },
+  "visualHint": {
+    "message": "Faceți dublu clic pe un nume sau valoare pentru a edita. Enter pentru confirmare, Shift+Enter pentru o linie nouă, Escape pentru anulare."
+  },
+  "shortcutLabel": {
+    "message": "Scurtătură tastatură:"
+  },
+  "shortcutNone": {
+    "message": "Nicio scurtătură configurată"
+  },
+  "shortcutConfigure": {
+    "message": "Configurează"
+  },
+  "savedStatus": {
+    "message": "Salvat ✓"
+  },
+  "addFolder": {
+    "message": "＋ Dosar"
+  },
+  "addSnippet": {
+    "message": "＋ Fragment"
+  },
+  "folderNamePrompt": {
+    "message": "Numele dosarului:"
+  },
+  "snippetNamePrompt": {
+    "message": "Numele fragmentului:"
+  },
+  "snippetValuePrompt": {
+    "message": "Valoare:"
+  },
+  "deleteFolder": {
+    "message": "Ștergeți dosarul \"%s\" și tot conținutul său?"
+  },
+  "deleteSnippet": {
+    "message": "Ștergeți \"%s\"?"
+  },
+  "importReplace": {
+    "message": "Cum se importă?\n\nOK      → Înlocuiește tot\nAnulare → Îmbinare (adăugare)"
+  },
+  "importError": {
+    "message": "Eroare la import: "
+  },
+  "moveUp": {
+    "message": "Mută în sus"
+  },
+  "moveDown": {
+    "message": "Mută în jos"
+  },
+  "delete": {
+    "message": "Șterge"
+  },
+  "closePanel": {
+    "message": "Închide"
+  },
+  "footerSuggest": {
+    "message": "Sugerează o funcție"
+  },
+  "footerReview": {
+    "message": "Lasă o recenzie"
+  },
+  "footerMail": {
+    "message": "Trimite un e-mail"
+  }
 }

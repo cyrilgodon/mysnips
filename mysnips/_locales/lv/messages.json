@@ -1,37 +1,116 @@
 {
-  "extName": { "message": "MySnips" },
-  "extDescription": { "message": "Personīgie fragmenti koka struktūrā — privāta lietošana" },
-  "searchPlaceholder": { "message": "Meklēt…" },
-  "openOptions": { "message": "Pārvaldīt fragmentus" },
-  "noSnippets": { "message": "Fragmentu vēl nav." },
-  "openEditor": { "message": "Atvērt redaktoru →" },
-  "noResults": { "message": "Rezultātu nav." },
-  "copied": { "message": "Nokopēts!" },
-  "inserted": { "message": "Ievietots!" },
-  "optionsTitle": { "message": "MySnips — Redaktors" },
-  "tabVisual": { "message": "Koks" },
-  "tabJson": { "message": "Neapstrādāts JSON" },
-  "importBtn": { "message": "⬆ Importēt failu" },
-  "exportBtn": { "message": "⬇ Eksportēt failu" },
-  "jsonApply": { "message": "✓ Lietot" },
-  "jsonReset": { "message": "↺ Atcelt izmaiņas" },
-  "jsonHint": { "message": "Rediģējiet JSON tieši. Ctrl+S vai poga Lietot saglabāšanai. Sintakses kļūdas tiek rādītas pirms pārrakstīšanas." },
-  "visualHint": { "message": "Veiciet dubultklikšķi uz nosaukuma vai vērtības rediģēšanai. Enter apstiprināšanai, Shift+Enter jaunai rindai, Escape atcelšanai." },
-  "shortcutLabel": { "message": "Tastatūras īsinājumtaustiņš:" },
-  "shortcutNone": { "message": "Īsinājumtaustiņš nav konfigurēts" },
-  "shortcutConfigure": { "message": "Konfigurēt" },
-  "savedStatus": { "message": "Saglabāts ✓" },
-  "addFolder": { "message": "＋ Mape" },
-  "addSnippet": { "message": "＋ Fragments" },
-  "folderNamePrompt": { "message": "Mapes nosaukums:" },
-  "snippetNamePrompt": { "message": "Fragmenta nosaukums:" },
-  "snippetValuePrompt": { "message": "Vērtība:" },
-  "deleteFolder": { "message": "Dzēst mapi \"%s\" ar visu tās saturu?" },
-  "deleteSnippet": { "message": "Dzēst \"%s\"?" },
-  "importReplace": { "message": "Kā importēt?\n\nLabi     → Aizstāt visu\nAtcelt → Apvienot (pievienot)" },
-  "importError": { "message": "Importēšanas kļūda: " },
-  "moveUp": { "message": "Pārvietot uz augšu" },
-  "moveDown": { "message": "Pārvietot uz leju" },
-  "delete": { "message": "Dzēst" },
-  "closePanel": { "message": "Aizvērt" }
+  "extName": {
+    "message": "MySnips — Text Expander"
+  },
+  "extDescription": {
+    "message": "Teksta paplašinātājs & fragmentu pārvaldnieks — ievietojiet veidnes un gatavas atbildes uzreiz. Alt+S."
+  },
+  "searchPlaceholder": {
+    "message": "Meklēt…"
+  },
+  "openOptions": {
+    "message": "Pārvaldīt fragmentus"
+  },
+  "noSnippets": {
+    "message": "Fragmentu vēl nav."
+  },
+  "openEditor": {
+    "message": "Atvērt redaktoru →"
+  },
+  "noResults": {
+    "message": "Rezultātu nav."
+  },
+  "copied": {
+    "message": "Nokopēts!"
+  },
+  "inserted": {
+    "message": "Ievietots!"
+  },
+  "optionsTitle": {
+    "message": "MySnips — Redaktors"
+  },
+  "tabVisual": {
+    "message": "Koks"
+  },
+  "tabJson": {
+    "message": "Neapstrādāts JSON"
+  },
+  "importBtn": {
+    "message": "⬆ Importēt failu"
+  },
+  "exportBtn": {
+    "message": "⬇ Eksportēt failu"
+  },
+  "jsonApply": {
+    "message": "✓ Lietot"
+  },
+  "jsonReset": {
+    "message": "↺ Atcelt izmaiņas"
+  },
+  "jsonHint": {
+    "message": "Rediģējiet JSON tieši. Ctrl+S vai poga Lietot saglabāšanai. Sintakses kļūdas tiek rādītas pirms pārrakstīšanas."
+  },
+  "visualHint": {
+    "message": "Veiciet dubultklikšķi uz nosaukuma vai vērtības rediģēšanai. Enter apstiprināšanai, Shift+Enter jaunai rindai, Escape atcelšanai."
+  },
+  "shortcutLabel": {
+    "message": "Tastatūras īsinājumtaustiņš:"
+  },
+  "shortcutNone": {
+    "message": "Īsinājumtaustiņš nav konfigurēts"
+  },
+  "shortcutConfigure": {
+    "message": "Konfigurēt"
+  },
+  "savedStatus": {
+    "message": "Saglabāts ✓"
+  },
+  "addFolder": {
+    "message": "＋ Mape"
+  },
+  "addSnippet": {
+    "message": "＋ Fragments"
+  },
+  "folderNamePrompt": {
+    "message": "Mapes nosaukums:"
+  },
+  "snippetNamePrompt": {
+    "message": "Fragmenta nosaukums:"
+  },
+  "snippetValuePrompt": {
+    "message": "Vērtība:"
+  },
+  "deleteFolder": {
+    "message": "Dzēst mapi \"%s\" ar visu tās saturu?"
+  },
+  "deleteSnippet": {
+    "message": "Dzēst \"%s\"?"
+  },
+  "importReplace": {
+    "message": "Kā importēt?\n\nLabi     → Aizstāt visu\nAtcelt → Apvienot (pievienot)"
+  },
+  "importError": {
+    "message": "Importēšanas kļūda: "
+  },
+  "moveUp": {
+    "message": "Pārvietot uz augšu"
+  },
+  "moveDown": {
+    "message": "Pārvietot uz leju"
+  },
+  "delete": {
+    "message": "Dzēst"
+  },
+  "closePanel": {
+    "message": "Aizvērt"
+  },
+  "footerSuggest": {
+    "message": "Ieteikt funkciju"
+  },
+  "footerReview": {
+    "message": "Atstāt atsauksmi"
+  },
+  "footerMail": {
+    "message": "Sūtīt e-pastu"
+  }
 }

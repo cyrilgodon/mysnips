@@ -1,5 +1,11 @@
 'use strict';
 
+// ── Config ────────────────────────────────────────────────────────────────────
+// Update these URLs before publishing a new version
+const FEEDBACK_URL = 'https://github.com/cyrilgodon/mysnips/discussions/1';
+const FEEDBACK_MAILTO = 'mailto:mysnips@zeolitop.com?subject=MySnips%20%E2%80%94%20Feature%20suggestion';
+const STORE_REVIEW_URL = 'https://chromewebstore.google.com/detail/mysnips/YOUR_EXTENSION_ID/reviews'; // TODO: remplacer par l'ID réel après publication
+
 // ── Color helpers ─────────────────────────────────────────────────────────────
 
 function isHexColor(str) {
@@ -495,6 +501,14 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.tab[data-tab="visual"]').textContent = t('tabVisual');
   document.querySelector('.tab[data-tab="json"]').textContent = t('tabJson');
   document.querySelector('#shortcut-bar .shortcut-label').textContent = t('shortcutLabel');
+
+  // Footer links
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    el.textContent = t(el.dataset.i18n);
+  });
+  document.getElementById('footer-feedback').href = FEEDBACK_URL;
+  document.getElementById('footer-mailto').href = FEEDBACK_MAILTO;
+  document.getElementById('footer-review').href = STORE_REVIEW_URL;
 
   loadTree();
   initTabs();

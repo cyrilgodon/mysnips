@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "MySnips"
+    "message": "MySnips — Text Expander"
   },
   "extDescription": {
-    "message": "Persönliche Snippets in einer Baumstruktur — private Nutzung"
+    "message": "Textexpander & Snippet-Manager — Vorlagen, Standardantworten, Kürzel sofort einfügen. Alt+S drücken."
   },
   "searchPlaceholder": {
     "message": "Suchen…"
@@ -103,5 +103,14 @@
   },
   "closePanel": {
     "message": "Schließen"
+  },
+  "footerSuggest": {
+    "message": "Funktion vorschlagen"
+  },
+  "footerReview": {
+    "message": "Bewertung abgeben"
+  },
+  "footerMail": {
+    "message": "E-Mail senden"
   }
 }

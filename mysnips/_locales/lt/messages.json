@@ -1,37 +1,116 @@
 {
-  "extName": { "message": "MySnips" },
-  "extDescription": { "message": "Asmeniniai fragmentai medžio struktūroje — asmeninis naudojimas" },
-  "searchPlaceholder": { "message": "Ieškoti…" },
-  "openOptions": { "message": "Tvarkyti fragmentus" },
-  "noSnippets": { "message": "Fragmentų dar nėra." },
-  "openEditor": { "message": "Atidaryti redaktorių →" },
-  "noResults": { "message": "Rezultatų nėra." },
-  "copied": { "message": "Nukopijuota!" },
-  "inserted": { "message": "Įkelta!" },
-  "optionsTitle": { "message": "MySnips — Redaktorius" },
-  "tabVisual": { "message": "Medis" },
-  "tabJson": { "message": "Neapdorotas JSON" },
-  "importBtn": { "message": "⬆ Importuoti failą" },
-  "exportBtn": { "message": "⬇ Eksportuoti failą" },
-  "jsonApply": { "message": "✓ Taikyti" },
-  "jsonReset": { "message": "↺ Atšaukti pakeitimus" },
-  "jsonHint": { "message": "Redaguokite JSON tiesiogiai. Ctrl+S arba mygtukas Taikyti išsaugojimui. Sintaksės klaidos rodomos prieš perrašant." },
-  "visualHint": { "message": "Dukart spustelėkite pavadinimą ar reikšmę redagavimui. Enter patvirtinimui, Shift+Enter naujai eilutei, Escape atšaukimui." },
-  "shortcutLabel": { "message": "Klaviatūros spartusis klavišas:" },
-  "shortcutNone": { "message": "Spartusis klavišas nesukonfigūruotas" },
-  "shortcutConfigure": { "message": "Konfigūruoti" },
-  "savedStatus": { "message": "Išsaugota ✓" },
-  "addFolder": { "message": "＋ Aplankas" },
-  "addSnippet": { "message": "＋ Fragmentas" },
-  "folderNamePrompt": { "message": "Aplanko pavadinimas:" },
-  "snippetNamePrompt": { "message": "Fragmento pavadinimas:" },
-  "snippetValuePrompt": { "message": "Reikšmė:" },
-  "deleteFolder": { "message": "Ištrinti aplanką \"%s\" ir visą jo turinį?" },
-  "deleteSnippet": { "message": "Ištrinti \"%s\"?" },
-  "importReplace": { "message": "Kaip importuoti?\n\nGerai     → Pakeisti viską\nAtšaukti → Sujungti (pridėti)" },
-  "importError": { "message": "Importavimo klaida: " },
-  "moveUp": { "message": "Perkelti aukštyn" },
-  "moveDown": { "message": "Perkelti žemyn" },
-  "delete": { "message": "Ištrinti" },
-  "closePanel": { "message": "Uždaryti" }
+  "extName": {
+    "message": "MySnips — Text Expander"
+  },
+  "extDescription": {
+    "message": "Teksto plėstuvas & fragmentų tvarkyklė — įterpkite šablonus ir paruoštus atsakymus akimirksniu. Alt+S."
+  },
+  "searchPlaceholder": {
+    "message": "Ieškoti…"
+  },
+  "openOptions": {
+    "message": "Tvarkyti fragmentus"
+  },
+  "noSnippets": {
+    "message": "Fragmentų dar nėra."
+  },
+  "openEditor": {
+    "message": "Atidaryti redaktorių →"
+  },
+  "noResults": {
+    "message": "Rezultatų nėra."
+  },
+  "copied": {
+    "message": "Nukopijuota!"
+  },
+  "inserted": {
+    "message": "Įkelta!"
+  },
+  "optionsTitle": {
+    "message": "MySnips — Redaktorius"
+  },
+  "tabVisual": {
+    "message": "Medis"
+  },
+  "tabJson": {
+    "message": "Neapdorotas JSON"
+  },
+  "importBtn": {
+    "message": "⬆ Importuoti failą"
+  },
+  "exportBtn": {
+    "message": "⬇ Eksportuoti failą"
+  },
+  "jsonApply": {
+    "message": "✓ Taikyti"
+  },
+  "jsonReset": {
+    "message": "↺ Atšaukti pakeitimus"
+  },
+  "jsonHint": {
+    "message": "Redaguokite JSON tiesiogiai. Ctrl+S arba mygtukas Taikyti išsaugojimui. Sintaksės klaidos rodomos prieš perrašant."
+  },
+  "visualHint": {
+    "message": "Dukart spustelėkite pavadinimą ar reikšmę redagavimui. Enter patvirtinimui, Shift+Enter naujai eilutei, Escape atšaukimui."
+  },
+  "shortcutLabel": {
+    "message": "Klaviatūros spartusis klavišas:"
+  },
+  "shortcutNone": {
+    "message": "Spartusis klavišas nesukonfigūruotas"
+  },
+  "shortcutConfigure": {
+    "message": "Konfigūruoti"
+  },
+  "savedStatus": {
+    "message": "Išsaugota ✓"
+  },
+  "addFolder": {
+    "message": "＋ Aplankas"
+  },
+  "addSnippet": {
+    "message": "＋ Fragmentas"
+  },
+  "folderNamePrompt": {
+    "message": "Aplanko pavadinimas:"
+  },
+  "snippetNamePrompt": {
+    "message": "Fragmento pavadinimas:"
+  },
+  "snippetValuePrompt": {
+    "message": "Reikšmė:"
+  },
+  "deleteFolder": {
+    "message": "Ištrinti aplanką \"%s\" ir visą jo turinį?"
+  },
+  "deleteSnippet": {
+    "message": "Ištrinti \"%s\"?"
+  },
+  "importReplace": {
+    "message": "Kaip importuoti?\n\nGerai     → Pakeisti viską\nAtšaukti → Sujungti (pridėti)"
+  },
+  "importError": {
+    "message": "Importavimo klaida: "
+  },
+  "moveUp": {
+    "message": "Perkelti aukštyn"
+  },
+  "moveDown": {
+    "message": "Perkelti žemyn"
+  },
+  "delete": {
+    "message": "Ištrinti"
+  },
+  "closePanel": {
+    "message": "Uždaryti"
+  },
+  "footerSuggest": {
+    "message": "Pasiūlyti funkciją"
+  },
+  "footerReview": {
+    "message": "Palikti atsiliepimą"
+  },
+  "footerMail": {
+    "message": "Siųsti el. laišką"
+  }
 }
